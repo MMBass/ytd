@@ -2,10 +2,12 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const ytdl = require('ytdl-core');
-const youtube_dl = require('youtube-dl');
+// const youtube_dl = require('youtube-dl');
 
 const app = express();
 app.use(cors());
+
+const PORT = process.env.PORT||3000;
 
 app.get('/download',async (req,res)=>{
     try{
@@ -27,5 +29,5 @@ app.get('/download',async (req,res)=>{
 });
 
 app.listen(3000, () => {
-    console.log('Listening on port 3000...');
+    console.log('Listening on port '+PORT);
 });
