@@ -3,7 +3,10 @@ var IDinput = document.querySelector('#id-input');
 var formatinput = document.querySelector('#format-input');
 
 sendBtn.addEventListener('click',()=>{
-  
+  fetch(`https://bass-ytd.herokuapp.com/test`)
+  .then(response => response.json())
+  .then(data => console.log(data));
+
   fetch(`https://bass-ytd.herokuapp.com/download?v_id=${IDinput.value}&format=${formatinput.value}`);
         // window.location.href = 
 });
