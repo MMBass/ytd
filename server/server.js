@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/test',async (req,res)=>{
+app.get('/test', (req,res)=>{
     try{
         res.send({true});
     }catch (err){
