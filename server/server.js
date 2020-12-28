@@ -48,6 +48,6 @@ app.get('/download',async (req,res)=>{
 
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Listening on port '+PORT);
 });
