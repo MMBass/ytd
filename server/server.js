@@ -8,8 +8,6 @@ const app = express();
 const PORT = process.env.PORT||3000;
 
 app.use(cors());
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -22,7 +20,7 @@ app.use(function(req, res, next) {
 
 app.get('/test', async (req,res)=>{
     try{
-        res.send({true});
+        res.send(true);
     }catch (err){
         console.log(err)
         res.status(500).send();

@@ -16,6 +16,9 @@
     "build": "npm i",
     "start": "node server.js"
   },
+  "engines": {
+    "node": "12.18.4"
+  },
   "author": "",
   "license": "ISC"
 }
