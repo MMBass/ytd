@@ -5,9 +5,16 @@ const ytdl = require('ytdl-core');
 // const youtube_dl = require('youtube-dl');
 
 const app = express();
+const PORT = process.env.PORT||3000;
+
 app.use(cors());
 
-const PORT = process.env.PORT||3000;
+app.use(function(req, res, next) {
+    res.set("Access-Control-Allow-Origin", "*");
+    res.set("Access-Control-Expose-Headers", 'Content-Length');
+	next();
+});
+
 
 app.get('/download',async (req,res)=>{
     try{
