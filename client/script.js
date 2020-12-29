@@ -5,10 +5,8 @@ var IDinput = document.querySelector('#id-input');
 var formatInput = document.querySelector('#format-input');
 var selectSection = document.querySelector('#select-section');
 var firstH6 = document.querySelector('#first-h6');
-const base_url = "https://bass-ytd.herokuapp.com/";
-
-// const base_url = "http://localhost:5000/";
-
+// const base_url = "https://bass-ytd.herokuapp.com/";
+const base_url = "http://localhost:5000/";
 
 getInfoBtn.addEventListener('click',()=>{
   getInfoBtn.className = "btn btn-warning progress-bar bg-warning progress-bar-striped progress-bar-animated mb-2";
@@ -41,7 +39,7 @@ function creaetOptions(list){
   selectSection.style.display = "block";
   sendBtn.style.display = "block";
   for(item of list){
-    formatInput.innerHTML += `<option value="${item.code}">mp4 - ${item.quality}</option>`;
+    formatInput.innerHTML += `<option value="${item.code}">${item.format} - ${item.quality}</option>`;
   }
 }
 

@@ -2,7 +2,6 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const ytdl = require('ytdl-core');
-// const youtube_dl = require('youtube-dl');
 
 const app = express();
 const PORT = process.env.PORT||5000;
@@ -18,26 +17,17 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.get('/test', async (req,res)=>{
-//     try{
-//         res.send(true);
-//     }catch (err){
-//         console.log(err)
-//         res.status(500).send();
-//     }
-
-// });
-
 app.get('/getInfo',async (req,res)=>{
     try{
         let v_id = req.query.v_id;
         let info = await ytdl.getInfo(v_id);
-        let avilableFormats = [];
-        console.log(v_id);
-
+        let avilableFormats = [{format:"mp3",quality:"audio",code:"audio"}];
+    
+        let audioFormats = ytdl.filterFormats(info.formats, 'audioonly');
+        
         info.formats.forEach(function(item, index, array) {  
             if(item.qualityLabel != null && item.mimeType.indexOf('mp4') >= 0 && item.mimeType.indexOf('mp4a') >= 0){
-                avilableFormats.push({quality:item.qualityLabel,code:item.itag});
+                avilableFormats.push({format:'mp4',quality:item.qualityLabel,code:item.itag});
             } 
         });
 
@@ -51,15 +41,21 @@ app.get('/getInfo',async (req,res)=>{
 
 app.get('/download',async (req,res)=>{
     try{
+       
         var v_id = req.query.v_id;
         var formtCode = req.query.format;
         var YT_URL = `https://youtu.be/${v_id}`;
-        console.log(YT_URL);
         let info = await ytdl.getInfo(v_id);
-        res.header('Content-Disposition', 'attachment; filename="'+info.videoDetails.title+'.mp4"');
-        let format = ytdl.chooseFormat(info.formats, { quality: formtCode });
 
-        ytdl(YT_URL,{format}).pipe(res);
+        if(formtCode === 'audio'){ 
+            res.header('Content-Disposition', 'attachment; filename="'+info.videoDetails.title+'.mp3"');
+            ytdl(YT_URL, { filter: 'audioonly'}).pipe(res);
+        }else{
+            res.header('Content-Disposition', 'attachment; filename="'+info.videoDetails.title+'.mp4"');
+            let format = ytdl.chooseFormat(info.formats, { quality: formtCode });
+            ytdl(YT_URL,{format}).pipe(res);
+        }   
+    
     }catch (err){
         console.log(err);
         res.status(500).send();
