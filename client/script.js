@@ -5,6 +5,7 @@ var IDinput = document.querySelector('#id-input');
 var formatInput = document.querySelector('#format-input');
 var selectSection = document.querySelector('#select-section');
 var firstH6 = document.querySelector('#first-h6');
+
 const base_url = "https://bass-ytd.herokuapp.com/";
 
 getInfoBtn.addEventListener('click',()=>{
