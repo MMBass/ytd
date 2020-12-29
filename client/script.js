@@ -5,8 +5,7 @@ var IDinput = document.querySelector('#id-input');
 var formatInput = document.querySelector('#format-input');
 var selectSection = document.querySelector('#select-section');
 var firstH6 = document.querySelector('#first-h6');
-// const base_url = "https://bass-ytd.herokuapp.com/";
-const base_url = "http://localhost:5000/";
+const base_url = "https://bass-ytd.herokuapp.com/";
 
 getInfoBtn.addEventListener('click',()=>{
   getInfoBtn.className = "btn btn-warning progress-bar bg-warning progress-bar-striped progress-bar-animated mb-2";
