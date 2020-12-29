@@ -1,14 +1,38 @@
 const sendBtn = document.querySelector('#send-button');
+const getInfoBtn = document.querySelector('#get-info-button');
 var IDinput = document.querySelector('#id-input');
-var formatinput = document.querySelector('#format-input');
+var formatInput = document.querySelector('#format-input');
+var selectSection = document.querySelector('#select-section');
+var firstH6 = document.querySelector('#first-h6');
+const base_url = "https://bass-ytd.herokuapp.com/";
+// const base_url = "http://localhost:5000/";
+
+
+getInfoBtn.addEventListener('click',()=>{
+  getInfoBtn.className = "btn btn-warning progress-bar bg-warning progress-bar-striped progress-bar-animated mb-2";
+ 
+  fetch(`${base_url}getInfo?v_id=${IDinput.value}`)
+  .then(response => response.json())
+  .then(avilableFormats =>{
+    creaetOptions(avilableFormats);
+   });
+});
 
 sendBtn.addEventListener('click',()=>{
-  
-  // fetch(`https://bass-ytd.herokuapp.com/test`)
-  // .then(response => response.json())
-  // .then(data => console.log(data));
-        window.location.href = `https://bass-ytd.herokuapp.com/download?v_id=${IDinput.value}&format=${formatinput.value}`;
+  sendBtn.className = "btn btn-danger progress-bar bg-danger progress-bar-striped progress-bar-animated mb-2";
+  window.location.href = `${base_url}download?v_id=${IDinput.value}&format=${formatInput.value}`;
 });
+
+function creaetOptions(list){
+  getInfoBtn.style.display = "none";
+  IDinput.style.display = "none";
+  firstH6.style.display = "none";
+  selectSection.style.display = "block";
+  sendBtn.style.display = "block";
+  for(item of list){
+    formatInput.innerHTML += `<option value="${item.code}">mp4 - ${item.quality}</option>`;
+  }
+}
 
 function copyExample(element){
     var range, selection, worked;

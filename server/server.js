@@ -5,7 +5,7 @@ const ytdl = require('ytdl-core');
 // const youtube_dl = require('youtube-dl');
 
 const app = express();
-const PORT = process.env.PORT||3000;
+const PORT = process.env.PORT||5000;
 
 app.use(cors());
 
@@ -28,6 +28,26 @@ app.use(function(req, res, next) {
 
 // });
 
+app.get('/getInfo',async (req,res)=>{
+    try{
+        let v_id = req.query.v_id;
+        let info = await ytdl.getInfo(v_id);
+        let avilableFormats = [];
+        console.log(v_id);
+
+        info.formats.forEach(function(item, index, array) {  
+            if(item.qualityLabel != null && item.mimeType.indexOf('mp4') >= 0 && item.mimeType.indexOf('mp4a') >= 0){
+                avilableFormats.push({quality:item.qualityLabel,code:item.itag});
+            } 
+        });
+
+        res.send(avilableFormats);
+    }catch (err){
+        console.log(err);
+        res.status(500).send();
+    }
+
+});
 
 app.get('/download',async (req,res)=>{
     try{
@@ -36,7 +56,6 @@ app.get('/download',async (req,res)=>{
         var YT_URL = `https://youtu.be/${v_id}`;
         console.log(YT_URL);
         let info = await ytdl.getInfo(v_id);
-        console.log(info.videoDetails);
         res.header('Content-Disposition', 'attachment; filename="'+info.videoDetails.title+'.mp4"');
         let format = ytdl.chooseFormat(info.formats, { quality: formtCode });
 

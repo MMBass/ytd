@@ -15,23 +15,26 @@
           
         </nav>
     
-        <main role="main" class="container">
-
-          <div class="my-3 p-3 bg-white rounded box-shadow">
-            <h6 class="border-bottom border-gray pb-2 mb-0">Paste a youtube ID URL here:</h6>
+        <main role="main" class="container row justify-content-center">
+          
+          <div class="my-3 p-3 bg-white rounded box-shadow w-l-50 col-md-6">
+            <h6 id="first-h6" class="border-bottom border-gray pb-2 mb-2">Paste a youtube ID URL here:</h6>
                     <div class="form-group mb-2">
                       <input type="text" name="" id="id-input" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Chose format:</label>
+                    <div id="select-section" class="form-group">
+                       <h6 class="border-bottom border-gray pb-2 mb-2">Chose quality:</h6>
                         <select class="form-control" id="format-input">
-                          <option value="18">mp4 - 360px</option>
+                          <!-- <option value="18">mp4 - 360px</option>
                           <option value="135">mp4 - 480px</option>
                           <option value="136">mp4 - 720px</option>
-                          <option value="135">mp3 - not available yet</option>
+                          <option value="135">mp3 - not available yet</option> -->
                         </select>
-                      </div>
-                    <button id="send-button" class="btn btn-warning d-block mb-2">DOWNLOAD</button>
+                    </div>
+
+                   
+                    <button id="get-info-button" class="btn btn-warning mb-2">CHECK FORMATS</button>
+                    <button id="send-button" class="btn btn-danger mb-2">DOWNLOAD</button>
     
             <small class="d-block text-right mt-3">
                 example ID click to copy: <a href="#" alt="Click to copy" title="Click to copy" onclick='copyExample(this)'>UO_QuXr521I</a>
