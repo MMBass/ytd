@@ -1,0 +1,12 @@
+/* body{
+    direction: rtl;
+} */
+
+main{
+    justify-content: right;
+    text-align: right;
+}
+
+.en{
+    display: none;
+  }

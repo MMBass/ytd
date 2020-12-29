@@ -1,43 +1,84 @@
-const sendBtn = document.querySelector('#send-button');
-const getInfoBtn = document.querySelector('#get-info-button');
+var language = window.navigator.userLanguage || window.navigator.language;
+if(language === "he"){
+  getHebrow();
+}
+
+function getHebrow(){
+  document.querySelector('#lang-tag').href = "he.css";
+}
+function getEnglish(){
+  document.querySelector('#lang-tag').href = "en.css";
+}
+
+const sendBtnHe = document.querySelector('#send-button-he');
+const getInfoBtnHe = document.querySelector('#get-info-button-he');
+const sendBtnEn = document.querySelector('#send-button-en');
+const getInfoBtnEn = document.querySelector('#get-info-button-en');
+
 let main = document.querySelectorAll('main')[0];
 var IDinput = document.querySelector('#id-input');
 var formatInput = document.querySelector('#format-input');
 var selectSection = document.querySelector('#select-section');
 var firstH6 = document.querySelector('#first-h6');
-
 const base_url = "https://bass-ytd.herokuapp.com/";
 
-getInfoBtn.addEventListener('click',()=>{
-  getInfoBtn.className = "btn btn-warning progress-bar bg-warning progress-bar-striped progress-bar-animated mb-2";
+getInfoBtnEn.addEventListener('click',()=>{
+  getInfo();
+});
+getInfoBtnHe.addEventListener('click',()=>{
+  getInfo();
+});
+
+function getInfo(){
+  getInfoBtnHe.className = "btn btn-warning progress-bar bg-warning progress-bar-striped progress-bar-animated mb-2";
+  getInfoBtnEn.className = "btn btn-warning progress-bar bg-warning progress-bar-striped progress-bar-animated mb-2";
  
   fetch(`${base_url}getInfo?v_id=${IDinput.value}`)
   .then(response => response.json())
   .then(avilableFormats =>{
     creaetOptions(avilableFormats);
    });
+}
+
+sendBtnEn.addEventListener('click',()=>{
+  getDown();
+});
+sendBtnHe.addEventListener('click',()=>{
+  getDown();
 });
 
-sendBtn.addEventListener('click',()=>{
-  sendBtn.className = "btn btn-danger progress-bar bg-danger progress-bar-striped progress-bar-animated mb-2";
+function getDown(){
+  sendBtnEn.className = "btn btn-danger progress-bar bg-danger progress-bar-striped progress-bar-animated mb-2";
+  sendBtnHe.className = "btn btn-danger progress-bar bg-danger progress-bar-striped progress-bar-animated mb-2";
   window.location.href = `${base_url}download?v_id=${IDinput.value}&format=${formatInput.value}`;
   
   setTimeout(()=>{
-  getInfoBtn.style.display = "block";
-  getInfoBtn.className = "btn btn-warning mb-2";
+  getInfoBtnEn.style.display = "block";
+  getInfoBtnEn.className = "btn btn-warning mb-2";
+  getInfoBtnHe.style.display = "block";
+  getInfoBtnHe.className = "btn btn-warning mb-2";
+
   IDinput.style.display = "block";
   firstH6.style.display = "block";
   selectSection.style.display = "none";
-  sendBtn.style.display = "none";
+
+  sendBtnEn.style.display = "none";
+  sendBtnHe.style.display = "none";
+
+  formatInput.innerHTML = '';
+  IDinput.value = '';
   },1000);
-});
+}
 
 function creaetOptions(list){
-  getInfoBtn.style.display = "none";
+  getInfoBtnEn.style.display = "none";
+  getInfoBtnHe.style.display = "none";
+
   IDinput.style.display = "none";
   firstH6.style.display = "none";
   selectSection.style.display = "block";
-  sendBtn.style.display = "block";
+  sendBtnEn.style.display = "block";
+  sendBtnHe.style.display = "block";
   for(item of list){
     formatInput.innerHTML += `<option value="${item.code}">${item.format} - ${item.quality}</option>`;
   }

@@ -1,11 +1,7 @@
-body{
-  
-}
 
 #select-section{
   display: none;
 }
-
-#send-button{
+#send-button-en , #send-button-he{
     display: none;
 }
