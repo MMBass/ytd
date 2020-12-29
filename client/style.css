@@ -1,6 +1,11 @@
+body{
+  
+}
+
 #select-section{
   display: none;
 }
+
 #send-button{
     display: none;
 }
