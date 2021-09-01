@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT-Downloader</title>
+    <meta name="theme-color" content="#FFC107">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+       <link id="lang-tag" rel="stylesheet" href="en.css">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark row">
+          <a class="navbar-brand col-10 en" href="#">YT-Downloader</a>
+          <a class="navbar-brand col-10 he" href="#">YT-Downloader - הורדה מיוטיוב</a>
+          <span class="he btn btn-sm btn-light rounded mr-2" onclick="getEnglish()">EN</span>
+          <span class="en btn btn-sm btn-light rounded mr-2" onclick="getHebrow()"> HE </span>
+         
+        </nav>
+    
+        <main role="main" class="container row justify-content-center">
+          
+          <div class="my-3 p-3 bg-white rounded box-shadow w-l-50 col-md-6">
+            <h6 id="first-h6" class="border-bottom border-gray pb-2 mb-2">
+                  <span class="en">Paste a youtube video ID  here:</span>
+                  <span class="he" >הדבק מזהה של סרטון כאן:</span>
+             </h6>
+                    <div class="form-group mb-2">
+                      <input type="text" name="" id="id-input" class="form-control">
+                    </div>
+                    <div id="select-section" class="form-group">
+                       <h6 class="border-bottom border-gray pb-2 mb-2">
+                        <span class="en">Chose quality:</span>
+                        <span class="he">בחר איכות:</span>
+                       </h6>
+                        <select class="form-control" id="format-input">
+                           <!-- options go here -->
+                        </select>
+                    </div>
+
+                    <span class="he">
+                      <button id="get-info-button-he" class="btn btn-warning mb-2">קבל פורמטים</button>
+                      <button id="send-button-he" class="btn btn-danger mb-2">הורדה</button>
+                    </span>
+                    <span class="en">
+                      <button id="get-info-button-en" class="btn btn-warning mb-2">CHECK FORMATS</button>
+                      <button id="send-button-en" class="btn btn-danger mb-2">DOWNLOAD</button>
+                    </span>
+                    
+            <small class="d-block text-right mt-3">
+                <span class="he">מזהה לדוגמא להעתקה:</span>
+                <span class="en"> example ID click to copy: </span>
+                <a href="#" alt="Click to copy" title="Click to copy" onclick='copyExample(this)'>UO_QuXr521I</a>
+            </small>
+          </div>
+        </main>
+
+        <script src="script.js"></script>
+  </body>
+  
+</html>
