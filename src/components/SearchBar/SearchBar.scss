@@ -1,0 +1,15 @@
+@import "../../theme.scss";
+
+form{
+    width: 100%;
+
+    input{
+        width: 60%;
+    }
+
+    @media (max-width: $break-mobile){
+        input{
+            width: 80%;
+        }
+    }
+}

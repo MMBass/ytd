@@ -1,0 +1,14 @@
+@import "../../theme.scss";
+
+.layout{
+    padding: 20px;
+    min-height: 600px;
+    height: 100%;
+    background-color: $light;
+    color: $text-dark;
+    text-align: center;
+
+    @media (max-width: $break-mobile){
+        padding: 20px 0px;
+    }
+}

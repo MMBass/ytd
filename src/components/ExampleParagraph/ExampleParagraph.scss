@@ -1,0 +1,26 @@
+@import "../../theme.scss";
+
+
+.example-paragraph{
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    
+    .empty{
+        background-color: rgb(207, 207, 207);
+        height: 15px;
+        margin-top: 10px;
+    }
+
+    .top-empty{
+        width: 80%;
+    }
+
+    .middle-empty{
+        width: 60%;
+    }
+
+    .bottom-empty{
+        width: 70%;
+    }
+}

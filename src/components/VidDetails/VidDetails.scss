@@ -1,0 +1,22 @@
+@import "../../theme.scss";
+
+.vid-details{
+    width: 95%;
+    margin-left: 10px;
+    text-align: left;
+
+    p, i{
+        display: block;
+        margin: unset;
+        margin-bottom: 8px;
+    }
+    
+    svg{
+        float: right;
+        cursor: pointer;
+        &:hover{
+           color: $warning;
+        }
+    }
+}
+
