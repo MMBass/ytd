@@ -15,10 +15,13 @@
                 "./assets"
             ],
             "@services": [
-                "./assets/img"
+                "./services"
             ],
             "@apis": [
-                "./assets/icons"
+                "./apis"
+            ],
+            "@store": [
+                "./store"
             ]
         }
     },

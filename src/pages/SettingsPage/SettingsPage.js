@@ -1,10 +1,15 @@
+import "./SettingsPage.scss";
 
+import InnerFrame from "@components/InnerFrame/InnerFrame";
 
 function SettingsPage() {
     return (
-        <div>
-            <h1>Settings</h1>
-        </div>
+        <>
+            <InnerFrame id="SETTINGS_PAGE">
+
+            </InnerFrame>
+        </>
+
     );
 };
 

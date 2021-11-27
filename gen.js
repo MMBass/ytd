@@ -16,4 +16,17 @@ generateTemplateFiles([
       overwrite: true,
     },
   },
+  {
+    option: 'p',
+    defaultCase: '(pascalCase)',
+    entry: {
+      folderPath: './src/templates/component' ,
+    },
+    stringReplacers: ['name', { question: 'Insert model name', slot: 'name' }],
+    output: {
+      path: './src/pages/name',
+      pathAndFileNameDefaultCase: '(pascalCase)',
+      overwrite: true,
+    },
+  },
 ]);

@@ -1,11 +1,16 @@
 // use the ls for beginning 
+import "./HistoryPage.scss";
+
+import InnerFrame from "@components/InnerFrame/InnerFrame";
 
 function HistoryPage() {
     return (
-        // here use the "page" component
-        <div>
-            <h1>History</h1>
-        </div>
+        <>
+            <InnerFrame id="HISTORY_PAGE">
+
+            </InnerFrame>
+        </>
+
     );
 };
 
