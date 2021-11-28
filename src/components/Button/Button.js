@@ -2,7 +2,7 @@ import "./Button.scss";
 
 function Button(props) {
   return (
-    <button>
+    <button type={props.type}>
       {props.children ||props.btnContent}
     </button>
   );

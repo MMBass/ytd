@@ -1,9 +1,9 @@
-const reducer = (state = "", action )=>{
+const reducer = (state = {}, action )=>{
     switch (action.type){
-        case "set":
-            return state = action.payload || state;
+        case "setVideo":
+            return state = action.payload;
         default:
-            return state = "";
+            return state;
     }
 }
 

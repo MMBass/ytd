@@ -1,7 +1,7 @@
 const playerActionCreators = {
     openPlayer: (bool) =>{
         return  {
-            type: "open",
+            type: "openPlayer",
             payload: bool,
         };
     },

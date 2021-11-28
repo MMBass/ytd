@@ -1,9 +1,9 @@
-const reducer = (state = false, action )=>{
+const reducer = (state = true, action )=>{
     switch (action.type){
-        case "open":
+        case "openPlayer":
             return state = action.payload;
         default:
-            return state = true;
+            return state;
     }
 }
 

@@ -2,7 +2,7 @@ import "./Input.scss";
 
 function Input(props) {
   return (
-    <input placeholder={props.placeholder}></input>
+    <input placeholder={props.placeholder} onChange={props.onChange}></input>
   );
 }
 

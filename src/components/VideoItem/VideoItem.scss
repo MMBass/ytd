@@ -1,11 +1,11 @@
 @import "../../theme.scss";
 
 .vid-item{
-  display: inline-flex;
+  display: flex;
   width: 33.3%;
   min-width: 300px;
   height: 100px;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1;
   margin-bottom: 5px;
   text-align: left;
@@ -17,11 +17,12 @@
 
   img{
     background-color: rgb(207, 207, 207);
-    width: 150px;
+    min-width: 150px;
     height: 100%;
   }
 
   @media (max-width: $break-mobile){
     font-size: 16px;
+    width: 100%;
 }
 }

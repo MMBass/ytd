@@ -9,24 +9,31 @@ import MinimizePlayer from "@components/MinimizePlayer/MinimizePlayer";
 function Player(props) {
   const player = useSelector((state) => state.player);
   const video = useSelector((state) => state.video);
-  console.log(video);
 
-  const VidoDetails = props.title ? <VidDetails video></VidDetails> : <ExampleParagraph ></ExampleParagraph>;
+  const VidoDetails = video.id ? <VidDetails {...video}></VidDetails> : <ExampleParagraph ></ExampleParagraph>;
 
-  const FrameWrapper = function (){
+  const FrameWrapper = function () {
     return (
       <div>
         <div className="frame-wrapper">
-          <iframe 
-            // src={`https://www.youtube.com/embed/${video.id}`}
-            // title={video.title || 'video'}
+          { video.id ?
+            <iframe
+              src={`https://www.youtube.com/embed/${video.id.videoId}`}
+              title={video.snippet.title || 'video'}
+              frameBorder='0'
+            ></iframe>
+            :
+            <iframe
+            title="uniqe"
             frameBorder='0'
           ></iframe>
+          }
+
         </div>
         {VidoDetails}
       </div>
     );
-            
+
   }
 
   return (

@@ -1,8 +1,8 @@
 const videoActionCreators = {
-    setVideo: (string) => {
+    setVideo: (obj) => {
         return {
-            type: "set",
-            payload: string,
+            type: "setVideo",
+            payload: obj,
         }
     }
 }
