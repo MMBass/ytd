@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+//guide for plilist items: https://developers.google.com/youtube/v3/docs/?apix=true#PlaylistItems
+
 export default axios.create({
   baseURL: 'https://www.googleapis.com/youtube/v3/',
 

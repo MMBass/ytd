@@ -38,7 +38,6 @@ function SearchBar() {
   if (!window.localStorage.getItem("API_KEY") || window.localStorage.getItem("API_KEY").length < 6) {
     return (
       <form onSubmit={lsSubmit}>
-        {/* TODO use the input props */}
         <Input onChange={handleChange} name='key-input' type="text" placeholder="Enter the api key first" ></Input>
         <Button type="submit">
           <AiOutlineSend></AiOutlineSend>
@@ -49,7 +48,6 @@ function SearchBar() {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* TODO use the input props */}
       <Input onChange={handleChange} name='video-search' type="text" placeholder="Search video or playlist ..." ></Input>
       <Button type="submit">
         <FaSearch></FaSearch>
