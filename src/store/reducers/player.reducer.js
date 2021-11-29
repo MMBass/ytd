@@ -1,4 +1,4 @@
-const reducer = (state = true, action )=>{
+const reducer = (state = false, action )=>{
     switch (action.type){
         case "openPlayer":
             return state = action.payload;

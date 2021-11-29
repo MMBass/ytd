@@ -21,6 +21,7 @@ function Player(props) {
               src={`https://www.youtube.com/embed/${video.id.videoId}`}
               title={video.snippet.title || 'video'}
               frameBorder='0'
+              allowFullScreen="true"
             ></iframe>
             :
             <iframe

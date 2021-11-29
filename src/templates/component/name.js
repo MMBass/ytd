@@ -1,6 +1,6 @@
-import "./comp_name.scss";
+import "./name.scss";
 
-function comp_name() {
+function name() {
   return (
     <div id="">
       
@@ -8,4 +8,4 @@ function comp_name() {
   );
 }
 
-export default comp_name;
+export default name;

@@ -1,6 +1,6 @@
 const { generateTemplateFiles } = require('generate-template-files');
 
-// const config = require('./package.json');
+// run 'node gen' to start use
 
 generateTemplateFiles([
   {
@@ -9,7 +9,7 @@ generateTemplateFiles([
     entry: {
       folderPath: './src/templates/component' ,
     },
-    stringReplacers: ['name', { question: 'Insert model name', slot: 'name' }],
+    stringReplacers: ['name'],
     output: {
       path: './src/components/name',
       pathAndFileNameDefaultCase: '(pascalCase)',
@@ -22,7 +22,7 @@ generateTemplateFiles([
     entry: {
       folderPath: './src/templates/component' ,
     },
-    stringReplacers: ['name', { question: 'Insert model name', slot: 'name' }],
+    stringReplacers: ['name'],
     output: {
       path: './src/pages/name',
       pathAndFileNameDefaultCase: '(pascalCase)',
