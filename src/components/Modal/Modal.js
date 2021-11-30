@@ -12,6 +12,15 @@ function Modal(props) {
   const dispatch = useDispatch();
   const { openModal } = bindActionCreators(openModalActionCreators, dispatch);
 
+  function handleChange(code){
+    setFormat(code);
+  }
+
+  function handleSubmit(){
+    getFile(format);
+    openModal(false);
+  }
+
   return (
         <div className="modalcontainer">
             <div className="modal">
@@ -20,15 +29,15 @@ function Modal(props) {
                 <h2>Select Format</h2>
                 {formats.map((i)=>{
                     return( 
-                      <>
-                        <label htmlFor={i.quality}>{i.quality}</label>
-                        <input type="radio" id={i.quality} name="format" value={i.quality}/>
-                      </>)
+                      <div className="format-item-wrapper">
+                        <label htmlFor={i.quality}>{i.format} - {i.quality}</label>
+                        <input type="radio" id={i.quality} name="format" value={i.code} onChange={()=>handleChange(i.code)}/>
+                      </div>)
                 })}
               </div>
               <div className="buttons">
                 <span onClick={()=>openModal(false)}>Cancel</span>
-                <span onClick={()=>getFile(format)}>Download</span>
+                <span onClick={()=>handleSubmit()}>Download</span>
               </div>
             </div>
           </div>

@@ -6,15 +6,14 @@ import VideoItem from "../VideoItem/VideoItem";
 import Flex from "@components/Flex/Flex";
 
 function VideoList() {
-
+  
   const list = useSelector((state) => state.vidList);
 
   return (
     <div className="vid-list">
       <Flex>
         {list.map((i) =>
-        // key={i.id.videoId}
-          <>{<VideoItem {...i} ></VideoItem>}</>
+          <>{<VideoItem {...i} key={new Date() || i.id.videoId} ></VideoItem>}</>
         )}
       </Flex>
 

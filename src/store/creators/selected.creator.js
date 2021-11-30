@@ -1,4 +1,4 @@
-const selected = {
+const selectedAction = {
     setSelected: (obj) =>{
         return  {
             type: "setSelected",
@@ -7,4 +7,4 @@ const selected = {
     },
 }
 
-export default selected;
+export default selectedAction;

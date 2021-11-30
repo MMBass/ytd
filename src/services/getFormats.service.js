@@ -5,11 +5,13 @@ import downAxios from "@apis/downAxios";
 import { store } from "@store/store.js";
 import formatsActionCreators from "@store/creators/formats.creator.js";
 import openModalActionCreators from "@store/creators/openModal.creator.js";
+import openLoaderActionCreators from "@store/creators/loaderLine.creator.js";
 
 const getFormats = (video) => {
     const { openModal } = bindActionCreators(openModalActionCreators, store.dispatch);
     const { setFormats } = bindActionCreators(formatsActionCreators, store.dispatch);
-
+    const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
+    openLoader(true);
     // let globalQuality = undefined; // TODO get global Q from setting store;
 
     // if(!globalQuality){
@@ -27,12 +29,15 @@ const getFormats = (video) => {
     .then(function (avilableFormats) {
         setFormats(avilableFormats.data);
         openModal(true);
+        openLoader(false);
     })
     .catch(function (error) {
         console.log(error);
+        openLoader(false);
     })
     .then(function () {
         // always executed
+        openLoader(false);
     });
 };
 
