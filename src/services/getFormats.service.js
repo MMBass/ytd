@@ -25,7 +25,7 @@ const getFormats = (video) => {
             }
     })
     .then(function (avilableFormats) {
-        setFormats(avilableFormats);
+        setFormats(avilableFormats.data);
         openModal(true);
     })
     .catch(function (error) {

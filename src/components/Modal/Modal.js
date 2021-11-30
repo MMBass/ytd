@@ -21,8 +21,8 @@ function Modal(props) {
                 {formats.map((i)=>{
                     return( 
                       <>
-                        <label htmlFor={i}>{i}</label>
-                        <input type="radio" id={i} name="format" value={i}/>
+                        <label htmlFor={i.quality}>{i.quality}</label>
+                        <input type="radio" id={i.quality} name="format" value={i.quality}/>
                       </>)
                 })}
               </div>
