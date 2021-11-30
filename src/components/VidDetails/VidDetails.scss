@@ -4,15 +4,24 @@
     width: 95%;
     margin-left: 10px;
     text-align: left;
+    padding: 5px 2px 12px 2px;
 
     p, i{
         display: block;
         margin: unset;
-        margin-bottom: 8px;
+    }
+
+    i{
+        position: sticky;
+        top: 100%;
+        max-width: 70%;
+        overflow: hidden;
     }
     
     svg{
         float: right;
+        font-size: 18px;
+        margin-right: 10px;
         cursor: pointer;
         &:hover{
            color: $warning;

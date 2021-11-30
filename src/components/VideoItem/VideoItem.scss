@@ -5,7 +5,7 @@
   width: 33.3%;
   min-width: 300px;
   height: 100px;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1;
   margin-bottom: 5px;
   text-align: left;
@@ -17,12 +17,16 @@
 
   img{
     background-color: rgb(207, 207, 207);
-    min-width: 150px;
+    min-width: 170px;
     height: 100%;
   }
 
   @media (max-width: $break-mobile){
-    font-size: 16px;
+    font-size: 13px;
     width: 100%;
-}
+
+    img{
+      min-width: 150px;
+    }
+  }
 }

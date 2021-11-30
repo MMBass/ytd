@@ -1,4 +1,4 @@
-const playerActionCreators = {
+const loadeLineActionCreators = {
     openLoader: (bool) =>{
         return  {
             type: "openLoader",
@@ -7,4 +7,4 @@ const playerActionCreators = {
     },
 }
 
-export default playerActionCreators;
+export default loadeLineActionCreators;

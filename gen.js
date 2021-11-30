@@ -13,7 +13,6 @@ generateTemplateFiles([
     output: {
       path: './src/components/name',
       pathAndFileNameDefaultCase: '(pascalCase)',
-      overwrite: true,
     },
   },
   {
@@ -26,7 +25,30 @@ generateTemplateFiles([
     output: {
       path: './src/pages/name',
       pathAndFileNameDefaultCase: '(pascalCase)',
-      overwrite: true,
+    },
+  },
+  {
+    option: 'reducer',
+    defaultCase: '(pascalCase)',
+    entry: {
+      folderPath: './src/templates/redux/reducer/name.js' ,
+    },
+    stringReplacers: ['name'],
+    output: {
+      path: './src/store/reducers/name.reducer.js',
+      pathAndFileNameDefaultCase: '(camelCase)',
+    },
+  },
+  {
+    option: 'action',
+    defaultCase: '(pascalCase)',
+    entry: {
+      folderPath: './src/templates/redux/action/name.js' ,
+    },
+    stringReplacers: ['name'],
+    output: {
+      path: './src/store/creators/name.creator.js',
+      pathAndFileNameDefaultCase: '(camelCase)',
     },
   },
 ]);

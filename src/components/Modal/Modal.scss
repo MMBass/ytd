@@ -1,1 +1,77 @@
 @import "../../theme.scss";
+
+.modalcontainer {
+  min-height:100vh;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  padding-top: 100px;
+  background-color:rgba(0,0,0,0.5);
+}
+
+.modal {
+  margin: auto;
+  display:block;
+  position:relative;
+  width:600px;
+  max-width: 90%;
+  height:330px;
+  background-color:#FFF;
+
+  .content {
+    padding:30px;
+  }
+  .close {
+    cursor:pointer;
+    color:#FFF;
+    width:50px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    position:absolute;
+    right:0;
+    color:#999;
+    font-size:40px;
+    span {
+        transform:rotate(45deg);
+        display:block;
+    }
+  }
+
+  input{
+      margin: 10px;
+  }
+
+  .buttons {
+    cursor: pointer;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    height:50px;
+    span {
+      width:50%;
+      height:50px;
+      line-height:50px;
+      text-align:center;
+      float:left;
+      background-color:$gray;
+      color:$light;
+      transition:0.3s;
+      text-transform:uppercase;
+      font-weight:bold;
+      &:hover {
+        background-color:darken(#EEE,5%);
+      }
+      &:nth-of-type(2) {
+        float:right;
+        color:#FFF;
+        background-color:$warning;
+        &:hover {
+          background-color:darken($gray,5%);
+        }
+      }
+    }
+  }
+}
