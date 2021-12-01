@@ -1,22 +1,9 @@
-const initState = [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-];
+const initState = [];
 
 const reducer = (state = initState, action )=>{
     switch (action.type){
         case "setList":
-            return state = action.payload;
+            return state = state.concat(action.payload);
         default:
             return state;
     }

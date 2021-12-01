@@ -14,12 +14,13 @@ function SearchBar() {
   const [key, setKey] = useState("");
 
   const handleChange = (event) => {
+    let str = event.target.value;
     switch (event.target.name) {
       case "key-input":
-        setKey(event.target.value);
+        setKey(str);
         break;
       case "video-search":
-        setTerm(event.target.value);
+        setTerm(extractId(str));
         break;
       default:
         return;
@@ -28,12 +29,25 @@ function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     ytApiSearch(term);
   };
 
   const lsSubmit = (e) => {
-    window.localStorage.setItem("API_KEY",key);
+    window.localStorage.setItem("API_KEY", key);
+  }
+
+  const extractId = (str) => {
+    if (str.indexOf("youtu.be/") >= 0) {
+      const v_i = str.indexOf(".be/");
+      return str.slice(v_i + 4, v_i + 4 + 11);
+    }
+
+    if (str.indexOf("youtube.com") >= 0 && str.indexOf("v=") >= 0) {
+      const v_i = str.indexOf("v=");
+      return str.slice(v_i + 2, v_i + 2 + 11);
+    }
+    return str;
   }
 
   if (!window.localStorage.getItem("API_KEY") || window.localStorage.getItem("API_KEY").length < 6) {

@@ -6,8 +6,12 @@ import VideoItem from "../VideoItem/VideoItem";
 import Flex from "@components/Flex/Flex";
 
 function VideoList() {
-  
-  const list = useSelector((state) => state.vidList);
+
+  let list = useSelector((state) => state.vidList);
+
+  if (list.length < 1) {
+    list = [{},{},{},{},{},{},{},{},{},{},{},{},];
+  }
 
   return (
     <div className="vid-list">

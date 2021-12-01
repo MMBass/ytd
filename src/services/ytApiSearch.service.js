@@ -25,7 +25,10 @@ const ytApiSearch = (term) => {
     })
     .then(function (response) {
         setList(response.data.items);
-        // TODO here continue 5 times after to get 250+ by next page, and save in the background;
+        
+        for(let i = 0; i >= 5; i++){
+            ytApiSearch(term+"&pageToken="+response.nextPageToken);
+        }
         openLoader(false);
     })
     .catch(function (error) {
