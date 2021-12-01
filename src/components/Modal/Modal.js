@@ -5,6 +5,7 @@ import{ bindActionCreators} from "redux";
 
 import openModalActionCreators from "@store/creators/openModal.creator.js";
 import getFile from "services/getFile.service";
+import Flex from "components/Flex/Flex";
 
 function Modal(props) {
   const [format, setFormat] = useState('');
@@ -27,13 +28,15 @@ function Modal(props) {
               <div className="close" onClick={()=>openModal(false)}><span >&#43;</span></div>
               <div className="content">
                 <h2>Select Format</h2>
-                {formats.map((i)=>{
-                    return( 
-                      <div className="format-item-wrapper">
-                        <label htmlFor={i.quality}>{i.format} - {i.quality}</label>
-                        <input type="radio" id={i.quality} name="format" value={i.code} onChange={()=>handleChange(i.code)}/>
-                      </div>)
-                })}
+                <Flex>
+                  {formats.map((i)=>{
+                      return( 
+                        <div className="format-item-wrapper">
+                          <label htmlFor={i.quality}>{i.format} - {i.quality}</label>
+                          <input type="radio" id={i.quality} name="format" value={i.code} onChange={()=>handleChange(i.code)}/>
+                        </div>)
+                  })}
+                </Flex>
               </div>
               <div className="buttons">
                 <span onClick={()=>openModal(false)}>Cancel</span>

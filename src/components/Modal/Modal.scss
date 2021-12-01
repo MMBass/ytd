@@ -9,73 +9,99 @@
   right:0;
   padding-top: 100px;
   background-color:rgba(0,0,0,0.5);
-}
 
-.modal {
-  margin: auto;
-  display:block;
-  position:relative;
-  width:600px;
-  max-width: 90%;
-  height:330px;
-  background-color:#FFF;
-
-  .content {
-    padding:30px;
-  }
-  .close {
-    cursor:pointer;
-    color:#FFF;
-    width:50px;
-    height:50px;
-    text-align:center;
-    line-height:50px;
-    position:absolute;
-    right:0;
-    color:#999;
-    font-size:40px;
-    span {
-        transform:rotate(45deg);
-        display:block;
+  .modal {
+    margin: auto;
+    display:block;
+    position:relative;
+    width:600px;
+    max-width: 90%;
+    height:330px;
+    background-color:#FFF;
+  
+    .content {
+      padding:30px;
     }
-  }
-
-  label, input{
-    margin: 10px;
-  }
-
-  .format-item-wrapper {
-      
-  }
-
-  .buttons {
-    cursor: pointer;
-    width:100%;
-    position:absolute;
-    bottom:0;
-    height:50px;
-    span {
-      width:50%;
+    .close {
+      cursor:pointer;
+      color:#FFF;
+      width:50px;
       height:50px;
-      line-height:50px;
       text-align:center;
-      float:left;
-      background-color:$gray;
-      color:$light;
-      transition:0.3s;
-      text-transform:uppercase;
-      font-weight:bold;
-      &:hover {
-        background-color:darken(#EEE,5%);
+      line-height:50px;
+      position:absolute;
+      right:0;
+      color:#999;
+      font-size:40px;
+      span {
+          transform:rotate(45deg);
+          display:block;
       }
-      &:nth-of-type(2) {
-        float:right;
-        color:#FFF;
-        background-color:$warning;
+    }
+  
+    label, input{
+      margin: 10px;
+    }
+  
+    .format-item-wrapper {
+      flex: 2 2 auto; 
+      width: 50%;
+    }
+  
+    .buttons {
+      cursor: pointer;
+      width:100%;
+      position:absolute;
+      bottom:0;
+      height:50px;
+      span {
+        width:50%;
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        float:left;
+        background-color:$gray;
+        color:$light;
+        transition:0.3s;
+        text-transform:uppercase;
+        font-weight:bold;
         &:hover {
-          background-color:darken($gray,5%);
+          background-color:darken(#EEE,5%);
+        }
+        &:nth-of-type(2) {
+          float:right;
+          color:#FFF;
+          background-color:$warning;
+          &:hover {
+            background-color:darken($gray,5%);
+          }
         }
       }
     }
   }
+
+  @media (max-width: $break-mobile){
+    .modal{
+      position: fixed;
+      bottom: 0;
+      width:100%;
+      max-width: 100%;
+
+      animation-duration: 0.4s;
+      animation-name: slidein;
+    }
+    
+    @keyframes slidein {
+      from {
+        margin-bottom: -500px;
+        width: 300%;
+      }
+    
+      to {
+        margin-bottom: 0%;
+        width: 100%;
+      }
+    }
+  }
 }
+

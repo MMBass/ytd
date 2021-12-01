@@ -6,6 +6,7 @@ import loaderLine from "./loaderLine.reducer";
 import selected from "./selected.reducer";
 import openModal from "./openModal.reducer";
 import formats from "./formats.reducer";
+import settings from "./settings.reducer";
 
 const reducers = combineReducers({
     player: playerReducer,
@@ -15,6 +16,7 @@ const reducers = combineReducers({
     selected: selected,
     openModal: openModal,
     formats: formats,
+    settings: settings,
 });
 
 export default reducers;
