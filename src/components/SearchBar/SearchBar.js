@@ -28,6 +28,7 @@ function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     ytApiSearch(term);
   };
 
@@ -48,7 +49,7 @@ function SearchBar() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input onChange={handleChange} name='video-search' type="text" placeholder="Search video or playlist ..." ></Input>
+      <Input onChange={handleChange} name='video-search' type="text" placeholder="Search text / video id / link..." ></Input>
       <Button type="submit">
         <FaSearch></FaSearch>
       </Button>
