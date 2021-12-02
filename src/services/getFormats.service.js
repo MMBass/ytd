@@ -1,6 +1,7 @@
 import { bindActionCreators } from "redux";
 
 import downAxios from "@apis/downAxios";
+import getFile from "./getFile.service";
 
 import { store } from "@store/store.js";
 import formatsActionCreators from "@store/creators/formats.creator.js";
@@ -12,22 +13,23 @@ const getFormats = (video) => {
     const { setFormats } = bindActionCreators(formatsActionCreators, store.dispatch);
     const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
     openLoader(true);
-    // let globalQuality = undefined; // TODO get global Q from setting store;
 
-    // if(!globalQuality){
-        // getFile(globalFormat)
-    // }
+    if(!store.settings.globalFormat){
+        getFile(store.settings.globalFormat);
+    }
     
     const API_KEY = window.localStorage.getItem("API_KEY");
 
     downAxios.get('getInfo',{
             params:{
-                v_id: video.id.videoId,
+                v_id: "JUuic7mEs-s",
+                // v_id: video.id.videoId,
                 key: API_KEY,
             }
     })
     .then(function (avilableFormats) {
         setFormats(avilableFormats.data);
+
         openModal(true);
         openLoader(false);
     })

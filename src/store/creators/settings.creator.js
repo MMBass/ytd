@@ -1,8 +1,14 @@
 const Settings = {
-    setName: (bool) =>{
+    setMode: (str) =>{
         return  {
-            type: "setName",
-            payload: bool,
+            type: "setMode",
+            payload: str,
+        };
+    },
+    setGlobalFormat: (str) =>{
+        return  {
+            type: "setGlobalFormat",
+            payload: str,
         };
     },
 }

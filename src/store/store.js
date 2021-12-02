@@ -5,3 +5,5 @@ export const store = createStore(
     reducers,
     {}
 );
+
+console.log(store.getState());

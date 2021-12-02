@@ -6,12 +6,13 @@ import { store } from "@store/store.js";
 import vidListActionCreators from "@store/creators/vidList.creator.js";
 import openLoaderActionCreators from "@store/creators/loaderLine.creator.js";
 
+
+let count = 0;
+
 const ytApiSearch = (term) => {
     const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
     const { resetList, setList } = bindActionCreators(vidListActionCreators, store.dispatch);
     const API_KEY = window.localStorage.getItem("API_KEY");
-    
-    let count = 0;
 
     openLoader(true);
     resetList(true);
@@ -32,7 +33,7 @@ const ytApiSearch = (term) => {
         if(count <= 5){
             console.log(count, response.nextPageToken);
             count++;
-            // ytApiSearch(term+"&pageToken="+response.nextPageToken);
+            ytApiSearch(term+"&pageToken="+response.nextPageToken);
         }
       
         openLoader(false);

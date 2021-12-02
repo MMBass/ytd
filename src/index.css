@@ -12,6 +12,10 @@ body {
   background-color: #e4e4e400;
 }
 
+.music h1, .music button{
+      color: red;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
