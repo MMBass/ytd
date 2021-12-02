@@ -1,4 +1,4 @@
-const reducer = (state = ["720p","mp3", "mp4","360p"], action )=>{
+const reducer = (state = [], action )=>{
     switch (action.type){
         case "setFormats":
             return state = action.payload;

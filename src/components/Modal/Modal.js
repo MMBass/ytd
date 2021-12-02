@@ -18,17 +18,19 @@ function Modal(props) {
   }
 
   function handleSubmit(){
-    getFile(format);
-    openModal(false);
+    if(format){
+      getFile(format);
+      openModal(false);
+    }
   }
 
   return (
         <div className="modalcontainer">
             <div className="modal">
               <div className="close" onClick={()=>openModal(false)}><span >&#43;</span></div>
+              <h2>Select Format</h2>
               <div className="content">
-                <h2>Select Format</h2>
-                <Flex>
+                <Flex >
                   {formats.map((i)=>{
                       return( 
                         <div className="format-item-wrapper">

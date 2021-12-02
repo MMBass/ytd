@@ -4,6 +4,12 @@ const vidListActionCreators = {
             type: "setList",
             payload: array,
         }
+    },
+    resetList: (bool) => {
+        return {
+            type: "resetList",
+            payload: bool,
+        }
     }
 }
 

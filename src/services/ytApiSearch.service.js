@@ -8,10 +8,13 @@ import openLoaderActionCreators from "@store/creators/loaderLine.creator.js";
 
 const ytApiSearch = (term) => {
     const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
-    const { setList } = bindActionCreators(vidListActionCreators, store.dispatch);
+    const { resetList, setList } = bindActionCreators(vidListActionCreators, store.dispatch);
+    const API_KEY = window.localStorage.getItem("API_KEY");
+    
+    let count = 0;
 
     openLoader(true);
-    const API_KEY = window.localStorage.getItem("API_KEY");
+    resetList(true);
 
     ytapiAxios.get('search',{
         
@@ -25,10 +28,13 @@ const ytApiSearch = (term) => {
     })
     .then(function (response) {
         setList(response.data.items);
-        
-        for(let i = 0; i >= 5; i++){
-            ytApiSearch(term+"&pageToken="+response.nextPageToken);
+
+        if(count <= 5){
+            console.log(count, response.nextPageToken);
+            count++;
+            // ytApiSearch(term+"&pageToken="+response.nextPageToken);
         }
+      
         openLoader(false);
     })
     .catch(function (error) {

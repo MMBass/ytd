@@ -16,11 +16,12 @@
     position:relative;
     width:600px;
     max-width: 90%;
-    height:330px;
+    min-height:330px;
     background-color:#FFF;
   
     .content {
       padding:30px;
+      margin-bottom: 50px;
     }
     .close {
       cursor:pointer;
@@ -42,11 +43,12 @@
     label, input{
       margin: 10px;
     }
-  
+
     .format-item-wrapper {
       flex: 2 2 auto; 
       width: 50%;
     }
+   
   
     .buttons {
       cursor: pointer;

@@ -1,4 +1,4 @@
-const reducer = (state = false, action )=>{
+const reducer = (state = true, action )=>{
     switch (action.type){
         case "openModal":
             return state = action.payload;
