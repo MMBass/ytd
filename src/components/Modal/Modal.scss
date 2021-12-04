@@ -23,6 +23,11 @@
       padding:30px;
       margin-bottom: 50px;
     }
+
+    h2{
+      padding-top: 30px;
+    }
+
     .close {
       cursor:pointer;
       color:#FFF;
@@ -34,6 +39,7 @@
       right:0;
       color:#999;
       font-size:40px;
+      
       span {
           transform:rotate(45deg);
           display:block;

@@ -14,16 +14,15 @@ const getFormats = (video) => {
     const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
     openLoader(true);
 
-    if(!store.settings.globalFormat){
-        getFile(store.settings.globalFormat);
-    }
+    // if(store.settings.globalFormat){
+    //     getFile(store.settings.globalFormat);
+    // }
     
     const API_KEY = window.localStorage.getItem("API_KEY");
 
     downAxios.get('getInfo',{
             params:{
-                v_id: "JUuic7mEs-s",
-                // v_id: video.id.videoId,
+                v_id: video.id.videoId,
                 key: API_KEY,
             }
     })
