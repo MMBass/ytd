@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/yt-downloader-site/static/css/main.5b6f80d6.chunk.css",
-    "main.js": "/yt-downloader-site/static/js/main.3fe842ac.chunk.js",
-    "main.js.map": "/yt-downloader-site/static/js/main.3fe842ac.chunk.js.map",
+    "main.js": "/yt-downloader-site/static/js/main.fe0ef5eb.chunk.js",
+    "main.js.map": "/yt-downloader-site/static/js/main.fe0ef5eb.chunk.js.map",
     "runtime-main.js": "/yt-downloader-site/static/js/runtime-main.eaa48721.js",
     "runtime-main.js.map": "/yt-downloader-site/static/js/runtime-main.eaa48721.js.map",
     "static/js/2.bf6b1e7c.chunk.js": "/yt-downloader-site/static/js/2.bf6b1e7c.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.eaa48721.js",
     "static/js/2.bf6b1e7c.chunk.js",
     "static/css/main.5b6f80d6.chunk.css",
-    "static/js/main.3fe842ac.chunk.js"
+    "static/js/main.fe0ef5eb.chunk.js"
   ]
 }
