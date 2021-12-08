@@ -11,7 +11,8 @@ function VidDetails(props) {
   const dispatch = useDispatch();
   const { setSelected } = bindActionCreators(selectedAction, dispatch);
 
-  function handleSubmit(){
+  function handleSubmit(e){
+      e.stopPropagation();
       setSelected(props);
       getFormats(props);
   }
@@ -29,7 +30,7 @@ function VidDetails(props) {
     <div className="vid-details">
       <p className="vid-title">{title}</p>
       <i className="vid-source">{channelTitle}</i>
-      <small className="vid-footer" onClick={()=> handleSubmit(props)}> {props.publishTime } <AiOutlineArrowDown></AiOutlineArrowDown></small>
+      <small className="vid-footer" onClick={(e)=> handleSubmit(e,props)}> {props.publishTime } <AiOutlineArrowDown></AiOutlineArrowDown></small>
     </div>
   );
 };

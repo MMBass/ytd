@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import './App.scss';
@@ -12,17 +12,17 @@ import NoMatchPage from '@pages/NoMatchPage/NoMatchPage';
 
 function App() {
   const mode = useSelector(state => state.settings.mode);
-  
+
   return (
     <Router>
       <Header></Header>
       <Layout>
         <div className={mode}>
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
-            <Route exact path="history" element={<HistoryPage />} />
-            <Route exact path="settings" element={<SettingsPage />} />
-            <Route path="/*" element={<NoMatchPage />} />
+            <Route path="yt-downloader-site/" element={<HomePage />} />
+            <Route path="yt-downloader-site/history" element={<HistoryPage />} />
+            <Route path="yt-downloader-site/settings" element={<SettingsPage />} />
+            <Route path="yt-downloader-site/*" element={<NoMatchPage />} />
           </Routes>
         </div>
       </Layout>

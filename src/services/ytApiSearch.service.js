@@ -36,11 +36,13 @@ const ytApiSearch = (term, pt) => {
     .then(function (response) {
         setList(response.data.items);
 
-        if(count <= 5){
+        if(count < 5){
             count++;
             ytApiSearch(term, response.data.nextPageToken);
         }
-      
+        else{
+            count = 0;
+        } // TODO move reset to form click, if 'load-more' option added;
         openLoader(false);
     })
     .catch(function (error) {
