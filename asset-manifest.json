@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/yt-downloader-site/static/css/main.5b6f80d6.chunk.css",
-    "main.js": "/yt-downloader-site/static/js/main.5a4fcc33.chunk.js",
-    "main.js.map": "/yt-downloader-site/static/js/main.5a4fcc33.chunk.js.map",
+    "main.js": "/yt-downloader-site/static/js/main.b520d52d.chunk.js",
+    "main.js.map": "/yt-downloader-site/static/js/main.b520d52d.chunk.js.map",
     "runtime-main.js": "/yt-downloader-site/static/js/runtime-main.eaa48721.js",
     "runtime-main.js.map": "/yt-downloader-site/static/js/runtime-main.eaa48721.js.map",
-    "static/js/2.917b9d77.chunk.js": "/yt-downloader-site/static/js/2.917b9d77.chunk.js",
-    "static/js/2.917b9d77.chunk.js.map": "/yt-downloader-site/static/js/2.917b9d77.chunk.js.map",
+    "static/js/2.c2807b67.chunk.js": "/yt-downloader-site/static/js/2.c2807b67.chunk.js",
+    "static/js/2.c2807b67.chunk.js.map": "/yt-downloader-site/static/js/2.c2807b67.chunk.js.map",
     "static/js/3.acc1ab54.chunk.js": "/yt-downloader-site/static/js/3.acc1ab54.chunk.js",
     "static/js/3.acc1ab54.chunk.js.map": "/yt-downloader-site/static/js/3.acc1ab54.chunk.js.map",
     "index.html": "/yt-downloader-site/index.html",
     "static/css/main.5b6f80d6.chunk.css.map": "/yt-downloader-site/static/css/main.5b6f80d6.chunk.css.map",
-    "static/js/2.917b9d77.chunk.js.LICENSE.txt": "/yt-downloader-site/static/js/2.917b9d77.chunk.js.LICENSE.txt"
+    "static/js/2.c2807b67.chunk.js.LICENSE.txt": "/yt-downloader-site/static/js/2.c2807b67.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.eaa48721.js",
-    "static/js/2.917b9d77.chunk.js",
+    "static/js/2.c2807b67.chunk.js",
     "static/css/main.5b6f80d6.chunk.css",
-    "static/js/main.5a4fcc33.chunk.js"
+    "static/js/main.b520d52d.chunk.js"
   ]
 }
