@@ -1,8 +1,10 @@
+import './NoMatchPage.scss';
 
 function NoMatchPage() {
     return (
         <div id="NO_MATCH_WRAPPER">
-            <h1>Nothing Here</h1>
+            <p>404</p>
+            <p>Nothing Here</p>
         </div>
     );
 };

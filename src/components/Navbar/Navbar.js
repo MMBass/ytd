@@ -4,9 +4,9 @@ import "./Navbar.scss";
 function Navbar() {
     return (
         <nav className="navbar">
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="history">History</NavLink>
-                <NavLink to="settings">Settings</NavLink>
+                <NavLink to="yt-downloader-site/">Home</NavLink>
+                <NavLink to="yt-downloader-site/history">History</NavLink>
+                <NavLink to="yt-downloader-site/settings">Settings</NavLink>
         </nav>
     );
 }
