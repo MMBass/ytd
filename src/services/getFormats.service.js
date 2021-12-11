@@ -28,7 +28,6 @@ const getFormats = (video) => {
     })
     .then(function (avilableFormats) {
         setFormats(avilableFormats.data);
-        console.log(avilableFormats);
 
         openModal(true);
         openLoader(false);
