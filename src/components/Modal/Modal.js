@@ -30,7 +30,6 @@ function Modal(props) {
         <div className="close" onClick={() => openModal(false)}><span >&#43;</span></div>
         <h2>Select Format</h2>
         <div className="content">
-          <Flex >
             {formats.map((i) => {
               return (
                 <div className="format-item-wrapper">
@@ -39,7 +38,6 @@ function Modal(props) {
                   <label className="format-label" htmlFor={i.format}>{i.format}</label>
                 </div>)
             })}
-          </Flex>
         </div>
         <div className="buttons">
           <span onClick={() => openModal(false)}>Cancel</span>
