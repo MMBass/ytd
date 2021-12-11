@@ -17,12 +17,17 @@ function VidDetails(props) {
       getFormats(props);
   }
 
-  let title = props.title || props.snippet.title;
-  let channelTitle = 'channel title';
+  let title = "Video Title"; 
+  let channelTitle = 'Channel Title';
   
   if(props.snippet){
     channelTitle = props.snippet.channelTitle;
+    title =  props.snippet.title;
   } 
+  if(props.title){
+    channelTitle = props.author.name;
+    title =  props.title;
+  }
 
   title = (title.length > 65) ? title.substr(0, 65-1) + '...' : title; // cut the title if too long
   

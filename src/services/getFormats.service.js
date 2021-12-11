@@ -1,7 +1,6 @@
 import { bindActionCreators } from "redux";
 
 import downAxios from "@apis/downAxios";
-import getFile from "./getFile.service";
 
 import { store } from "@store/store.js";
 import formatsActionCreators from "@store/creators/formats.creator.js";

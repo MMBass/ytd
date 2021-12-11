@@ -63,6 +63,8 @@ async function startYtsr(term){
         }
 })
 .then(function(response) {
+    console.log(response.data);
+    
     setList(response.data);
     openLoader(false);
 })
