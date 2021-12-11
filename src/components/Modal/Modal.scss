@@ -17,16 +17,29 @@
     width:600px;
     max-width: 90%;
     min-height:330px;
+    max-height:80vh;
     background-color:#FFF;
+    overflow-y: scroll;
   
     .content {
-      padding:30px;
+      padding:10px;
       margin-bottom: 50px;
+
+      .format-label{
+        display: block;
+        margin: auto;
+        max-width: 10ch;
+        width: 100%;
+      }
+
+      label, input{
+        margin: 10px;
+      }
+
     }
 
     h2{
       padding-top: 30px;
-      text-transform:uppercase;
     }
 
     .close {
@@ -36,8 +49,8 @@
       height:50px;
       text-align:center;
       line-height:50px;
-      position:absolute;
-      right:0;
+      position:sticky;
+      left:20px;
       color:#999;
       font-size:40px;
       
@@ -46,21 +59,21 @@
           display:block;
       }
     }
-  
-    label, input{
-      margin: 10px;
-    }
 
     .format-item-wrapper {
       flex: 2 2 auto; 
-      width: 50%;
+      width: 30%;
+      margin-bottom: 20px;
     }
    
   
     .buttons {
       cursor: pointer;
       width:100%;
+      position:sticky;
+      bottom:0;
       height:50px;
+      
       span {
         width:50%;
         height:50px;
