@@ -1,9 +1,16 @@
 import "./InnerNav.scss";
 
-function InnerNav() {
+function InnerNav(props) {
+  // TODO add dynamic active state, start position id 3
   return (
-    <div id="">
-      
+    <div className="inner-nav">
+        {props.items.map((item)=>{
+
+          let className = 'inner-nav-link';
+          if(props.active === item.id) className += ' active';
+
+          return <p className={className} onClick={()=>props.navClick(item.id)}>{item.text}</p>
+        })}
     </div>
   );
 }

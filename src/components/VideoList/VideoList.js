@@ -20,9 +20,7 @@ function VideoList() {
           <>{<VideoItem {...i} key={new Date() || i.id.videoId} ></VideoItem>}</>
         )}
       </Flex>
-
     </div>
-
   );
 };
 

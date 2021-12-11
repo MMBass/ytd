@@ -1,1 +1,28 @@
 @import "../../theme.scss";
+
+.inner-nav {
+    width: 98%;
+    margin: auto;
+    background-color: rgb(187, 187, 187);
+    overflow: hidden;
+    font-weight: 600;
+
+    .inner-nav-link {
+        margin: unset;
+        float: left;
+        display: block;
+        color: #272727;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 21px;
+        border-bottom: 3px solid transparent;
+
+        &:hover {
+          border-bottom: 3px solid gray;
+        }
+    
+        &.active {
+          border-bottom: 3px solid gray;
+        }
+      }
+}

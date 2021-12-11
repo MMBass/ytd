@@ -1,4 +1,3 @@
-import { Children } from "react";
 import "./InnerFrame.scss";
 
 function InnerFrame(props) {

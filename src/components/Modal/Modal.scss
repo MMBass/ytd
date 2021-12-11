@@ -26,6 +26,7 @@
 
     h2{
       padding-top: 30px;
+      text-transform:uppercase;
     }
 
     .close {
@@ -59,8 +60,6 @@
     .buttons {
       cursor: pointer;
       width:100%;
-      position:absolute;
-      bottom:0;
       height:50px;
       span {
         width:50%;
