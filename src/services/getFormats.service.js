@@ -11,17 +11,14 @@ const getFormats = (video) => {
     const { openModal } = bindActionCreators(openModalActionCreators, store.dispatch);
     const { setFormats } = bindActionCreators(formatsActionCreators, store.dispatch);
     const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
+
     openLoader(true);
 
-    // if(store.settings.globalFormat){
-    //     getFile(store.settings.globalFormat);
-    // }
-    
     const API_KEY = window.localStorage.getItem("API_KEY");
 
     downAxios.get('getInfo',{
             params:{
-                v_id: video.id.videoId,
+                v_id: video.id,
                 key: API_KEY,
             }
     })

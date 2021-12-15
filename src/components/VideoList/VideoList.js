@@ -17,7 +17,7 @@ function VideoList() {
     <div className="vid-list">
       <Flex>
         {list.map((i) =>
-          <>{<VideoItem {...i} key={new Date() || i.id.videoId} ></VideoItem>}</>
+          <>{<VideoItem {...i} key={new Date() || i.id}></VideoItem>}</>
         )}
       </Flex>
     </div>

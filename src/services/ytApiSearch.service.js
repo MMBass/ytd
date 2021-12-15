@@ -11,70 +11,85 @@ let count = 0;
 
 const { resetList, setList } = bindActionCreators(vidListActionCreators, store.dispatch);
 const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
+const state = store.getState();
+const mode = state.settings.mode;
 
 const ytApiSearch = (term, pt) => {
-   
+
     const API_KEY = window.localStorage.getItem("API_KEY");
 
     openLoader(true);
 
-    if(count === 0){
+    if (count === 0) {
         resetList(true);
     }
 
-    ytapiAxios.get('search',{
-        
-            params:{
-                q:term,
-                key: API_KEY,
-                maxResults: '500',
-                part: 'snippet',
-                type: 'video',
-                pageToken: pt,
-            }
-    })
-    .then(function (response) {
-        setList(response.data.items);
+    ytapiAxios.get('search', {
 
-        if(count < 5){
-            count++;
-            ytApiSearch(term, response.data.nextPageToken);
+        params: {
+            q: term,
+            key: API_KEY,
+            maxResults: '500',
+            part: 'snippet',
+            type: mode,
+            pageToken: pt,
         }
-        else{
-            count = 0;
-        } // TODO move reset to form click, if 'load-more' option added;
-        openLoader(false);
     })
-    .catch(function (error) {
-        console.log(error);
-        startYtsr(term);
-        // openLoader(false);
-    })
-    .then(function () {
-        // always executed
-    });
+        .then(function (response) {
+            const items = [];
+            response.data.items.forEach((item,index)=>{
+                items[index] = {
+                    id: item.id.videoId,
+                    thumbnail: item.snippet.thumbnails.default.url,
+                    channelName: item.snippet.channelTitle,
+                    title: (item.snippet.title.length > 65) ? item.snippet.title.substr(0, 65 - 1) + '...' : item.snippet.title, // cut the title if too long
+                    longTitle: item.snippet.title,
+                    publishTime: item.publishTime,
+                }
+            });
+
+            setList(items);
+
+            if (count < 5) {
+                count++;
+                ytApiSearch(term, response.data.nextPageToken);
+            }
+            else {
+                count = 0;
+            } // TODO move reset to form click, if 'load-more' option added;
+            openLoader(false);
+        })
+        .catch(function (error) {
+            console.log(error);
+            startYtsr(term); // backup method 2
+            // openLoader(false);
+        })
+        .then(function () {
+            // always executed
+        });
 };
 
-async function startYtsr(term){
+async function startYtsr(term) {
     openLoader(true);
-    downAxios.get('ytsr',{
-        params:{
-            term:term,
+    downAxios.get('ytsr', {
+        params: {
+            term: term,
+            type: mode,
         }
-})
-.then(function(response) {
-    console.log(response.data);
-    
-    setList(response.data);
-    openLoader(false);
-})
-.catch(function (error) {
-    console.log(error);
-    openLoader(false);
-})
-.then(function () {
-    // always executed
-});
+    })
+        .then(function (response) {
+            console.log(response.data);
+
+            setList(response.data);
+            openLoader(false);
+        })
+        .catch(function (error) {
+            console.log(error);
+            openLoader(false);
+        })
+        .then(function () {
+            // always executed
+        });
 } // todo try to pass to node side;
 
 export default ytApiSearch;

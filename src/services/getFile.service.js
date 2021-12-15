@@ -12,13 +12,13 @@ const getFile = (format) => {
 
     openLoader(true);
 
-    window.location.href = `https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id.videoId}&format=${format}`;
+    window.location.href = `https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}`;
 
     openLoader(false);
 
     // downAxios.get('download',{
     //         params:{
-    //             v_id: state.selected.id.videoId,
+    //             v_id: state.selected.id,
     //             format: format,
     //             key: API_KEY,
     //         }

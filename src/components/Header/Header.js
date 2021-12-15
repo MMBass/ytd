@@ -26,7 +26,7 @@ function Header() {
       <Flex>
         <h1>YT DOWNLOADER</h1>
         <Navbar></Navbar>
-        <Select options={["video","list","music"]} handleChange={selectChange}></Select>
+        <Select options={["video","playlist","music"]} handleChange={selectChange}></Select>
         <LangSwitch></LangSwitch>
       </Flex>
     </div>

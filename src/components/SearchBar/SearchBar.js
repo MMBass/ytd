@@ -52,7 +52,7 @@ function SearchBar() {
 
   if (!window.localStorage.getItem("API_KEY") || window.localStorage.getItem("API_KEY").length < 6) {
     return (
-      <form onSubmit={lsSubmit}>
+      <form className="search-form" onSubmit={lsSubmit}>
         <Input onChange={handleChange} name='key-input' type="text" placeholder="Enter the api key first" ></Input>
         <Button type="submit">
           <AiOutlineSend></AiOutlineSend>
@@ -62,7 +62,7 @@ function SearchBar() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
       <Input onChange={handleChange} name='video-search' type="text" placeholder="Search text / video id / link..." ></Input>
       <Button type="submit">
         <FaSearch></FaSearch>

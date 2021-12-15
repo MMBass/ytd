@@ -1,17 +1,14 @@
 const initState = {
     mode: "video",
-    globalFormat: "audio", //(TODO save the code quality, not the format)
+    globalFormat: "", // audio //(TODO save the code quality, not the format)
 }
 
 const reducer = (state = initState, action )=>{
-    const newState = state;
     switch (action.type){
         case "setMode":
-            newState.mode = action.payload;
-            return state = newState;
+            return { ...state, mode: action.payload };
         case "setGlobalFormat":
-            newState.globalFormat = action.payload;
-            return state = newState;
+            return { ...state, globalFormat: action.payload };
         default:
             return state;
     }

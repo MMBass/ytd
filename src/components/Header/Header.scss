@@ -8,11 +8,14 @@
     
     h1{
         flex: 1 1 auto; 
-        color: $warning;
     }
 
     nav, .lang-switch, h1{
         margin: auto;
+    }
+
+    select{
+        margin-left: 40px;
     }
 
     @media (max-width: $break-mobile){

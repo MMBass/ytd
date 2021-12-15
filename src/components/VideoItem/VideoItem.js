@@ -23,7 +23,7 @@ function VideoItem(props) {
 
       {props.id
         ?
-        <img className="vid-thumb" src={props.bestThumbnail ? props.bestThumbnail.url : props.snippet.thumbnails.default.url} alt={props.id} lazyload={true}/>
+        <img className="vid-thumb" src={props.thumbnail} alt={props.id} lazyload={true}/>
         :
         // eslint-disable-next-line jsx-a11y/alt-text
         <img className="vid-thumb" src="" alt={null}/>

@@ -18,7 +18,7 @@ function Player(props) {
         <div className="frame-wrapper">
           { video.id ?
             <iframe
-              src={`https://www.youtube.com/embed/${video.id.videoId}`}
+              src={`https://www.youtube.com/embed/${video.id}`}
               title={props.title || 'video'}
               frameBorder='0'
               allowFullScreen={true}

@@ -15,7 +15,7 @@ function HistoryPage() {
     const dispatch = useDispatch();
     const sections = [{ text: "Search", id: 1 }, { text: "Watch", id: 2 }, { text: "Download", id: 3 }];
     // const { setList } = bindActionCreators(vidListActionCreators, dispatch);
-    const [active, setActive] = useState(3);
+    const [active, setActive] = useState(1);
 
     useEffect(() => {
         // setList();
@@ -28,10 +28,10 @@ function HistoryPage() {
 
     const ActiveChild = () => {
         if (active === 1) {
-            return
+            return <p></p>;
             // TODO list of text array
         }
-        return <VideoList></VideoList>;
+        // return <VideoList></VideoList>;
 
     }
 

@@ -1,7 +1,31 @@
 @import "../theme.scss";
 
+.video{
+    h1{
+        color: $warning;
+    } 
+
+    button{
+        background-color: $warning;
+    }
+}
+
 .music{
-    h1, button{
+    h1{
         color: red;
+    } 
+
+    button{
+        background-color: red;
+    }
+}
+
+.playlist{
+    h1{
+        color: #4b84ff;
+    } 
+
+    button{
+        background-color: #4b84ff;
     }
 }

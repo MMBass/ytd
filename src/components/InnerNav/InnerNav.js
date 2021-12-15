@@ -1,7 +1,7 @@
 import "./InnerNav.scss";
 
 function InnerNav(props) {
-  // TODO add dynamic active state, start position id 3
+
   return (
     <div className="inner-nav">
         {props.items.map((item)=>{
