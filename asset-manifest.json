@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/yt-downloader-site/static/css/main.b11f67a3.chunk.css",
+    "main.css": "/yt-downloader-site/static/css/main.fa4b17d8.chunk.css",
     "main.js": "/yt-downloader-site/static/js/main.6263eea7.chunk.js",
     "main.js.map": "/yt-downloader-site/static/js/main.6263eea7.chunk.js.map",
     "runtime-main.js": "/yt-downloader-site/static/js/runtime-main.370f1aa0.js",
@@ -10,13 +10,13 @@
     "static/js/3.1a70cfc2.chunk.js": "/yt-downloader-site/static/js/3.1a70cfc2.chunk.js",
     "static/js/3.1a70cfc2.chunk.js.map": "/yt-downloader-site/static/js/3.1a70cfc2.chunk.js.map",
     "index.html": "/yt-downloader-site/index.html",
-    "static/css/main.b11f67a3.chunk.css.map": "/yt-downloader-site/static/css/main.b11f67a3.chunk.css.map",
+    "static/css/main.fa4b17d8.chunk.css.map": "/yt-downloader-site/static/css/main.fa4b17d8.chunk.css.map",
     "static/js/2.5d6ff2dc.chunk.js.LICENSE.txt": "/yt-downloader-site/static/js/2.5d6ff2dc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.370f1aa0.js",
     "static/js/2.5d6ff2dc.chunk.js",
-    "static/css/main.b11f67a3.chunk.css",
+    "static/css/main.fa4b17d8.chunk.css",
     "static/js/main.6263eea7.chunk.js"
   ]
 }
