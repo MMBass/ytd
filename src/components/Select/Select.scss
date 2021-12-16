@@ -1,24 +1,42 @@
 @import "../../theme.scss";
 
-.select {
+.select-wrapper{
     margin: auto;
     margin-right: 20px;
-    max-width: 124px;
-    border: 1px solid #d1d2d3;
-    border-radius: 5px;
     color: #202124;
-    cursor: pointer;
-    height: 36px;
-    line-height: 34px;
+
     min-width: 72px;
-    outline: 0;
-    overflow: hidden;
-    padding: 0 25px 0 5px;
-    text-overflow: ellipsis;
+    max-width: 124px;
+
+    p{
+        display: block;
+        border: 1px solid $gray;
+        background-color: $gray;
+        color: $light;
+        margin: 0;
+        padding: 1px 5px;
+        width: 100%;
+        border-radius: 5px 5px 0px 0px;
+        font-size: 11px;
+    }
+
+    .select {
+        display: block;
+        margin: auto;
+        width: 100%;
+        border: 1px solid #d1d2d3;
+        border-radius: 0px 0px 5px 5px;
+        cursor: pointer;
+        outline: 0;
+        overflow: hidden;
+        padding: 5px 10px 5px 5px;
+        font-size: 12px;
+        text-overflow: ellipsis;
+    }
 
     @media (max-width: $break-mobile){
         position: absolute;
-        top: 15px;
+        // top: 15px;
         right: 0px;
     }
 }

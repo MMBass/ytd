@@ -10,13 +10,13 @@
 .innerLoaderLine {
     height: 3px;
     width: 100%;
-    background: #c00;
+    background: $dark-red;
 }
 
 .innerLoaderLine:before {
     content: '';
     display: block;
-    background-color: #ff4e45;
+    background-color: $light-red;
     height: 3px;
     width: 0;
     animation: getWidth 3s ease-in infinite;

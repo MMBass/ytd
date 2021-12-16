@@ -6,6 +6,7 @@ import downAxios from "@apis/downAxios";
 import './App.scss';
 import Header from '@components/Header/Header';
 import Layout from '@components/Layout/Layout';
+import HeadTags from '@components/HeadTags/HeadTags';
 
 import HomePage from '@pages/HomePage/HomePage';
 import HistoryPage from '@pages/HistoryPage/HistoryPage';
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <Router>
+     <HeadTags></HeadTags>
      <div className={mode}>
       <Header></Header>
       <Layout>

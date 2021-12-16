@@ -10,17 +10,18 @@
         flex: 1 1 auto; 
     }
 
-    nav, .lang-switch, h1{
+    .lang-switch, h1{
         margin: auto;
     }
 
-    select{
+    .select-wrapper{
         margin-left: 40px;
     }
 
     @media (max-width: $break-mobile){
         height: auto;
-        padding: 10px 10px 0 20px;
+        padding: 20px 10px 0 20px;
+
         h1{
            font-size: 6.2vw;
            margin: 5px 0 5px 0;
