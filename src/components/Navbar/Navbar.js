@@ -7,7 +7,6 @@ import { AiOutlineHistory, AiOutlineHome } from 'react-icons/ai';
 function Navbar() {
     return (
         <nav className="navbar">
-                <NavLink to="yt-downloader-site/"><AiOutlineHome></AiOutlineHome></NavLink>
                 <NavLink to="yt-downloader-site/history"><AiOutlineHistory></AiOutlineHistory></NavLink>
                 <NavLink to="yt-downloader-site/settings"><FiSettings></FiSettings></NavLink>
         </nav>

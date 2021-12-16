@@ -1,14 +1,24 @@
 @import "../../theme.scss";
 
 .layout{
-    padding: 20px;
-    // min-height: 600px;
     height: 100%;
     background-color: $light;
     color: $text-dark;
-    text-align: center;
+    text-align: left;
+
+    .back-arrow svg{
+        padding: 3px;
+        padding-right: 10px;
+        font-size: 40px;
+        margin-bottom: -5px;
+
+        &:hover{
+            background-color: $gray;
+            color: white;
+        }
+    }
 
     @media (max-width: $break-mobile){
-        padding: 20px 0px;
+
     }
 }

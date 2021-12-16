@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import downAxios from "@apis/downAxios";
@@ -15,7 +15,7 @@ import NoMatchPage from '@pages/NoMatchPage/NoMatchPage';
 
 function App() {
   const mode = useSelector(state => state.settings.mode);
-  
+
   function init() {
     downAxios.get('/').then((res) => {
       if (res.status === 200) {
@@ -35,19 +35,18 @@ function App() {
 
   return (
     <Router>
-     <HeadTags></HeadTags>
-     <div className={mode}>
-      <Header></Header>
-      <Layout>
- 
+      <HeadTags></HeadTags>
+      <div className={mode}>
+        <Header></Header>
+        <Layout>
           <Routes>
             <Route exact path="yt-downloader-site/" element={<HomePage />} />
             <Route exact path="yt-downloader-site/history" element={<HistoryPage />} />
             <Route exact path="yt-downloader-site/settings" element={<SettingsPage />} />
             <Route path="yt-downloader-site/*" element={<NoMatchPage />} />
           </Routes>
-      </Layout>
-     </div>
+        </Layout>
+      </div>
     </Router>
   );
 }

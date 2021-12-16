@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import "./Player.scss";
 
@@ -9,6 +9,24 @@ import MinimizePlayer from "@components/MinimizePlayer/MinimizePlayer";
 function Player(props) {
   const player = useSelector((state) => state.player);
   const video = useSelector((state) => state.video);
+
+  const [fixed, setFixed] = useState('');
+  const [pageOffset, setOffset] = useState(0);
+
+  useEffect(() => {
+      window.onscroll = () => {
+          handleScroll();
+      }
+  });
+
+  const handleScroll = () => {
+      setOffset(window.pageYOffset)
+      if (window.pageYOffset > pageOffset) {
+          setFixed('fixed');
+      } else {
+          setFixed('');
+      }
+  }
 
   const VidoDetails = video.id ? <VidDetails {...video}></VidDetails> : <ExampleParagraph ></ExampleParagraph>;
 
@@ -38,7 +56,7 @@ function Player(props) {
   }
 
   return (
-    <div className={player ? "player" : "player fold-player"}>
+    <div className={player ? "player "+ fixed : "player fold-player "+ fixed}>
       <MinimizePlayer></MinimizePlayer>
       {player && <FrameWrapper></FrameWrapper>}
     </div>

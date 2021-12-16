@@ -1,7 +1,7 @@
 @import "../../theme.scss";
 
 .inner-nav {
-    width: 98%;
+    width: 100%;
     margin: auto;
     background-color: rgb(187, 187, 187);
     overflow: hidden;
@@ -14,7 +14,6 @@
         color: #272727;
         text-align: center;
         padding: 14px 16px;
-        font-size: 21px;
         border-bottom: 3px solid transparent;
 
         &:hover {
@@ -29,7 +28,7 @@
       @media (max-width: $break-mobile){
         
         .inner-nav-link{
-           font-size: 4.5vw;
+           font-size: 4vw;
            font-weight: 500;
         }
     }

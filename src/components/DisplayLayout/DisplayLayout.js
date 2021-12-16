@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./DisplayLayout.scss";
 
 import Player from '../Player/Player';
