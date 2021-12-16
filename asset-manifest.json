@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/yt-downloader-site/static/css/main.9ba5a72c.chunk.css",
-    "main.js": "/yt-downloader-site/static/js/main.283e483e.chunk.js",
-    "main.js.map": "/yt-downloader-site/static/js/main.283e483e.chunk.js.map",
+    "main.css": "/yt-downloader-site/static/css/main.4b66ffb6.chunk.css",
+    "main.js": "/yt-downloader-site/static/js/main.4694e8ed.chunk.js",
+    "main.js.map": "/yt-downloader-site/static/js/main.4694e8ed.chunk.js.map",
     "runtime-main.js": "/yt-downloader-site/static/js/runtime-main.402e18c9.js",
     "runtime-main.js.map": "/yt-downloader-site/static/js/runtime-main.402e18c9.js.map",
-    "static/js/2.3793ef1c.chunk.js": "/yt-downloader-site/static/js/2.3793ef1c.chunk.js",
-    "static/js/2.3793ef1c.chunk.js.map": "/yt-downloader-site/static/js/2.3793ef1c.chunk.js.map",
+    "static/js/2.1e3ae975.chunk.js": "/yt-downloader-site/static/js/2.1e3ae975.chunk.js",
+    "static/js/2.1e3ae975.chunk.js.map": "/yt-downloader-site/static/js/2.1e3ae975.chunk.js.map",
     "static/js/3.d92a60d4.chunk.js": "/yt-downloader-site/static/js/3.d92a60d4.chunk.js",
     "static/js/3.d92a60d4.chunk.js.map": "/yt-downloader-site/static/js/3.d92a60d4.chunk.js.map",
     "index.html": "/yt-downloader-site/index.html",
-    "static/css/main.9ba5a72c.chunk.css.map": "/yt-downloader-site/static/css/main.9ba5a72c.chunk.css.map",
-    "static/js/2.3793ef1c.chunk.js.LICENSE.txt": "/yt-downloader-site/static/js/2.3793ef1c.chunk.js.LICENSE.txt"
+    "static/css/main.4b66ffb6.chunk.css.map": "/yt-downloader-site/static/css/main.4b66ffb6.chunk.css.map",
+    "static/js/2.1e3ae975.chunk.js.LICENSE.txt": "/yt-downloader-site/static/js/2.1e3ae975.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.402e18c9.js",
-    "static/js/2.3793ef1c.chunk.js",
-    "static/css/main.9ba5a72c.chunk.css",
-    "static/js/main.283e483e.chunk.js"
+    "static/js/2.1e3ae975.chunk.js",
+    "static/css/main.4b66ffb6.chunk.css",
+    "static/js/main.4694e8ed.chunk.js"
   ]
 }
