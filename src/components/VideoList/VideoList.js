@@ -10,7 +10,7 @@ function VideoList() {
   let list = useSelector((state) => state.vidList);
 
   if (list.length < 1) {
-    list = [{},{},{},{},{},{},{},{},{},{},{},{},];
+    list =  Array.apply(null, Array(12));
   }
 
   return (

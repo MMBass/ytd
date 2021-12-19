@@ -33,6 +33,7 @@ const ytApiSearch = (term, pt) => {
             part: 'snippet',
             type: mode,
             pageToken: pt,
+            // videoCategoryId: 10, // Music category, results as video
         }
     })
         .then(function (response) {
