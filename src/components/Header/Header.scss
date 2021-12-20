@@ -1,14 +1,12 @@
 @import "../../theme.scss";
 
 #HEADER{
-    // height: 5vw;
     min-height: 60px;
     background-color: $dark;
     padding: 0px 0px 0px 20px;
     
     .h1-link{
-        flex: 1 1 auto; 
-        width: 300px;
+        flex: 2 2;
         margin: auto;
     }
 
@@ -16,21 +14,16 @@
         text-decoration: none;
     }
 
-    .lang-switch, h1{
-        margin: auto;
-    }
-
-    .select-wrapper{
-        margin-left: 40px;
-    }
-
     @media (max-width: $break-mobile){
         height: auto;
-        padding: 20px 10px 0 20px;
+        padding: 0px 10px 0 20px;
+
+        .h1-link{
+            margin-left: 0;
+        }
 
         h1{
            font-size: 6.2vw;
-           margin: 5px 0 5px 0;
         }
     }
 }

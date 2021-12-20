@@ -28,7 +28,7 @@ function Header() {
         <NavLink className="h1-link" to="yt-downloader-site/"><h1>YT DOWNLOADER</h1></NavLink>
         <Navbar></Navbar>
         <Select title="Mode" options={["video","playlist","music"]} handleChange={selectChange}></Select>
-        <LangSwitch></LangSwitch>
+        {/* <LangSwitch></LangSwitch> */}
       </Flex>
     </div>
   );

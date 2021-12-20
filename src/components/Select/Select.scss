@@ -3,6 +3,7 @@
 .select-wrapper{
     margin: auto;
     margin-right: 20px;
+    margin-left: 30px;
     color: #202124;
 
     min-width: 72px;
@@ -37,6 +38,7 @@
     @media (max-width: $break-mobile){
         position: absolute;
         margin-right: 10px;
+        margin-top: 10px;
         right: 0px;
     }
 }

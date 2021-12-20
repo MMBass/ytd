@@ -1,7 +1,8 @@
 @import "../../theme.scss";
 
 .navbar{
-    flex: 2 2 auto; 
+    flex: 2 2;
+    margin: auto; 
     color: $light;
     font-size: 21px;
     text-align: right;
@@ -10,25 +11,38 @@
     a{
         text-decoration: none;
         color: $light;
-        display: inline-block;
-        margin-top: 3%;
-        height: 90%;
-        padding: 5px 20px;
+        padding: 0px 20px;
 
-        &:hover{
-            background-color: $light;
-            color: $dark;
+        svg{
+            border-radius: 50%;
+            margin-top: 5px;
+            padding: 3px;
+            font-size: 35px;
+
+            &:hover{
+                color: $dark;
+                background-color: $light;  
+            }
         }
     }
 
     .active{
-        background-color: $light;
-        color: $dark;    
+        svg{
+            background-color: $light;
+            color: $dark; 
+        }
     }
 
     @media (max-width: $break-mobile){
-        font-size: 6vw;
-        margin-top: 20px;
+        flex: unset;
+        font-size: 6.5vw;
+        margin-top: 5px;
+        width: 100%;
         text-align: left;
+
+        svg{
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
     }
 }

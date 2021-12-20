@@ -1,4 +1,4 @@
-const initState = [];
+const initState = Array.apply(null, Array(12));;
 
 const reducer = (state = initState, action )=>{
     switch (action.type){

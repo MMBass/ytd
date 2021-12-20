@@ -20,12 +20,12 @@ function Player(props) {
   });
 
   const handleScroll = () => {
-      setOffset(window.pageYOffset)
-      if (window.pageYOffset > pageOffset) {
-          setFixed('fixed');
-      } else {
-          setFixed('');
-      }
+      // setOffset(window.pageYOffset)
+      // if (window.pageYOffset > pageOffset) {
+      //     setFixed('fixed');
+      // } else {
+      //     setFixed('');
+      // }
   }
 
   const VidoDetails = video.id ? <VidDetails {...video}></VidDetails> : <ExampleParagraph ></ExampleParagraph>;
