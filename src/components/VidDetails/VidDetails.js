@@ -27,7 +27,7 @@ function VidDetails(props) {
   return (
     <div className="vid-details">
       <p className="vid-title">{props.title}</p>
-      <i className="vid-source">{props.channelTitle}</i>
+      <i className="vid-source">{props.channelName}</i>
       <small className="vid-footer" onClick={(e) => handleSubmit(e, props)}> <AiOutlineArrowDown></AiOutlineArrowDown></small>
     </div>
   );
