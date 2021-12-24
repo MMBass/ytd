@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
 import { useSelector } from "react-redux";
 import "./Player.scss";
 
@@ -11,7 +11,8 @@ function Player(props) {
   const video = useSelector((state) => state.video);
 
   const [fixed, setFixed] = useState('');
-  const [pageOffset, setOffset] = useState(0);
+  // const [pageOffset, setOffset] = useState(0);
+  const playerElement = useRef(null);
 
   useEffect(() => {
       window.onscroll = () => {
@@ -21,18 +22,18 @@ function Player(props) {
 
   const handleScroll = () => {
       // setOffset(window.pageYOffset)
-      // if (window.pageYOffset > pageOffset) {
-      //     setFixed('fixed');
-      // } else {
-      //     setFixed('');
-      // }
+      if (window.pageYOffset > playerElement.current.offsetTop) {
+          setFixed('fixed');
+      } else {
+          setFixed('');
+      }
   }
 
   const VidoDetails = video.id ? <VidDetails {...video}></VidDetails> : <ExampleParagraph ></ExampleParagraph>;
 
   const FrameWrapper = function () {
     return (
-      <div>
+      <div className="player-outer-wrapper">
         <div className="frame-wrapper">
           { video.id ?
             <iframe
@@ -47,7 +48,6 @@ function Player(props) {
             frameBorder='0'
           ></iframe>
           }
-
         </div>
         {VidoDetails}
       </div>
@@ -56,9 +56,9 @@ function Player(props) {
   }
 
   return (
-    <div className={player ? "player "+ fixed : "player fold-player "+ fixed}>
+    <div  ref={playerElement} className={player ? "player "+ fixed : "player fold-player "+ fixed}>
       <MinimizePlayer></MinimizePlayer>
-      {player && <FrameWrapper></FrameWrapper>}
+      <FrameWrapper></FrameWrapper>
     </div>
 
   );

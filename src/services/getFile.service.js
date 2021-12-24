@@ -13,6 +13,7 @@ const getFile = (format) => {
     openLoader(true);
 
     window.location.href = `https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}`;
+    // window.location.href = `http://localhost:5000/download?v_id=${state.selected.id}&format=${format}`;
 
     openLoader(false);
 

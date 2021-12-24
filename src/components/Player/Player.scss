@@ -11,6 +11,7 @@
   padding-bottom: 10px;
   overflow-y: scroll;
   background-color: #fff;
+  z-index: 3;
   
     .frame-wrapper {
         position: relative;
@@ -44,6 +45,10 @@
     float: unset;
     overflow-y: unset;
     padding: unset;
+
+    .player-outer-wrapper{
+        display: none;
+    }
 }
 
 .fixed{
