@@ -19,23 +19,24 @@ function VideoItem(props) {
   }
 
   return (
-    <div className="vid-item" onClick={() => handleSetVideo()}>
+      <div className="vid-item" onClick={() => handleSetVideo()}>
 
-      {props.id
-        ?
-        <img className="vid-thumb" src={props.thumbnail} alt={props.id} lazyload={true}/>
-        :
-        // eslint-disable-next-line jsx-a11y/alt-text
-        <img className="vid-thumb" src="" alt={null}/>
-      }
+        {props.id
+          ?
+          <img className="vid-thumb" src={props.thumbnail} alt={props.id}/>
+          :
+          // eslint-disable-next-line jsx-a11y/alt-text
+          <img className="vid-thumb" src="" alt={null} />
+        }
 
-      {props.id
-        ?
-        <VidDetails {...props}></VidDetails>
-        :
-        <ExampleParagraph ></ExampleParagraph>
-      }
-    </div>
+        {props.id
+          ?
+          <VidDetails {...props}></VidDetails>
+          :
+          <ExampleParagraph ></ExampleParagraph>
+        }
+      </div>
+
   );
 };
 

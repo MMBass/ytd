@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./DisplayLayout.scss";
 
 import Player from '../Player/Player';
@@ -8,7 +7,7 @@ function DisplayLayout() {
 
     return (
         <div className="display-layout">
-            <Player data-src=""></Player>
+            <Player></Player>
             <VideoList></VideoList>
         </div>
     );

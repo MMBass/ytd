@@ -16,7 +16,7 @@ const getFormats = (video) => {
 
     const API_KEY = window.localStorage.getItem("API_KEY");
 
-    downAxios.get('getInfo',{
+    downAxios.get('info',{
             params:{
                 v_id: video.id,
                 key: API_KEY,
