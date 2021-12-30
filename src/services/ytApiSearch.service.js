@@ -38,7 +38,7 @@ const ytApiSearch = (term, pt) => {
     })
         .then(function (response) {
             const items = [];
-            response.data.items.forEach((item,index)=>{
+            response.data.items.forEach((item, index) => {
                 items[index] = {
                     id: item.id.videoId,
                     thumbnail: item.snippet.thumbnails.default.url,
@@ -61,7 +61,9 @@ const ytApiSearch = (term, pt) => {
             openLoader(false);
         })
         .catch(function (error) {
-            console.log(error);
+            if (error.response.status === 400) {
+                window.localStorage.removeItem("API_KEY");
+            }
             startYtsr(term); // backup method 2
             // openLoader(false);
         })
