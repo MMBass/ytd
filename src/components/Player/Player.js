@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import "./Player.scss";
 
@@ -9,8 +9,6 @@ import MinimizePlayer from "@components/MinimizePlayer/MinimizePlayer";
 function Player() {
   const player = useSelector((state) => state.player);
   const video = useSelector((state) => state.video);
-
-  const [fixed, setFixed] = useState('');
   const playerElement = useRef(null);
 
   useEffect(() => {
@@ -22,9 +20,12 @@ function Player() {
   const handleScroll = () => {
     if (window.innerWidth < 768) {
       if (window.pageYOffset > playerElement.current.offsetTop) {
-        setFixed('fixed');
+        // Change the style without re-render
+        playerElement.current.style.position =  "fixed";
+        playerElement.current.style.top =  "0";
+        playerElement.current.style.width =  "99%";
       } else {
-        setFixed('');
+        playerElement.current.style = '';
       }
     }
   }
@@ -53,13 +54,12 @@ function Player() {
       </div>
     );
   }
-
+  
   return (
-    <div ref={playerElement} className={player ? "player " + fixed : "player fold-player " + fixed}>
+    <div ref={playerElement} className={player ? "player " : "player fold-player "}>
       <MinimizePlayer title={video.title}></MinimizePlayer>
       <FrameWrapper></FrameWrapper>
     </div>
-
   );
 };
 
