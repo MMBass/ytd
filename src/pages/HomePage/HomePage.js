@@ -15,7 +15,7 @@ function HomePage() {
             <SearchBar></SearchBar>
             <DisplayLayout></DisplayLayout>
             {video.id && <DownBtn></DownBtn>}
-            {modal && <Modal></Modal>}
+            {modal && <Modal title={video.title}></Modal>}
           </div>
         );
 };

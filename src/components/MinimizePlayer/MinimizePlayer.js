@@ -9,7 +9,7 @@ import Button from "components/Button/Button";
 import { FaPlayCircle } from 'react-icons/fa';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 
-function MinimizePlayer() {
+function MinimizePlayer(props) {
   const dispatch = useDispatch();
   const { openPlayer } = bindActionCreators(playerActionCreators, dispatch);
   const player = useSelector((state) => state.player);
@@ -22,6 +22,7 @@ function MinimizePlayer() {
         :
         <FaPlayCircle className="react-icons" onClick={()=>openPlayer(true)}></FaPlayCircle>}
       </Button>
+      {player || <p>{props.title}</p>}
     </div>
   );
 }
