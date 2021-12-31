@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
-import downAxios from "@apis/downAxios";
+import serverAxios from "@apis/serverAxios";
 
 import './App.scss';
 import Header from '@components/Header/Header';
@@ -17,20 +17,21 @@ function App() {
   const mode = useSelector(state => state.settings.mode);
 
   function init() {
-    downAxios.get('/').then((res) => {
-      if (res.status === 200) {
+    serverAxios.get('/',{ headers:{ 'x-api-key':  window.localStorage.getItem('API_KEY')}}).then((response) => {
+      if (response.status === 200 && response.headers["access-token"]) {
+         window.localStorage.setItem('ACCESS_TOKEN',response.headers["access-token"]);
+      }else{
+        console.log('access-token problem');
       }
     }).catch((err) => {
       console.log(err)
     });
-
   }
 
   useEffect(() => {
-    // if (first === true) {
-
-    // }
-    init();
+    if ( window.localStorage.getItem('API_KEY') !== null) {
+      init();
+    }
   }, []);
 
   return (

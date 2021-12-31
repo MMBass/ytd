@@ -1,7 +1,7 @@
 import { bindActionCreators } from "redux";
 
 import ytapiAxios from "@apis/ytapiAxios";
-import downAxios from "@apis/downAxios";
+import serverAxios from "@apis/serverAxios";
 
 import { store } from "@store/store.js";
 import vidListActionCreators from "@store/creators/vidList.creator.js";
@@ -74,7 +74,10 @@ const ytApiSearch = (term, pt) => {
 
 async function startYtsr(term) {
     openLoader(true);
-    downAxios.get('ytsr', {
+    serverAxios.get('ytsr', {
+        headers:{
+            'x-access-token': window.localStorage.getItem("ACCESS_TOKEN"),
+        },
         params: {
             term: term,
             type: mode,

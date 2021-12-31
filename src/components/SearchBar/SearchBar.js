@@ -33,8 +33,9 @@ function SearchBar() {
     ytApiSearch(term);
   };
 
-  const lsSubmit = (e) => {
+  const lsSubmit = () => {
     window.localStorage.setItem("API_KEY", key);
+    window.location.reload();
   }
 
   const extractId = (str) => {

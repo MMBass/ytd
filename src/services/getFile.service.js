@@ -1,6 +1,6 @@
 import { bindActionCreators } from "redux";
 
-import downAxios from "@apis/downAxios";
+import serverAxios from "@apis/serverAxios";
 
 import { store } from "@store/store.js";
 import openLoaderActionCreators from "@store/creators/loaderLine.creator.js";
@@ -8,16 +8,16 @@ import openLoaderActionCreators from "@store/creators/loaderLine.creator.js";
 const getFile = (format) => {
     const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
     const state = store.getState();
-    const API_KEY = window.localStorage.getItem("API_KEY");
+    const accessToken = window.localStorage.getItem("ACCESS_TOKEN");
 
     openLoader(true);
 
     window.location.href = `https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}`;
-    // window.location.href = `http://localhost:5000/download?v_id=${state.selected.id}&format=${format}`;
+    // window.location.href = `http://localhost:5000/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`;
 
     openLoader(false);
 
-    // downAxios.get('download',{
+    // serverAxios.get('download',{
     //         params:{
     //             v_id: state.selected.id,
     //             format: format,
