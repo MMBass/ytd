@@ -61,7 +61,7 @@ const ytSingleSearch = (term, pt) => {
             }
             else {
                 count = 0;
-            } // TODO move reset to form click, if 'load-more' option added;
+            }
             openLoader(false);
         })
         .catch(function (error) {

@@ -12,7 +12,6 @@ import VideoList from "components/VideoList/VideoList";
 // import vidListActionCreators from "@store/creators/vidList.creator.js";
 
 function HistoryPage() {
-    // todo option to delete history, new global state list clled historyList, with histItem with X btn inside, and no player option;
 
     const dispatch = useDispatch();
     const sections = [{ text: "Search", id: 1 }, { text: "Watch", id: 2 }, { text: "Download", id: 3 }];
@@ -31,7 +30,6 @@ function HistoryPage() {
     const ActiveChild = () => {
         if (active === 1) {
             return <p></p>;
-            // TODO list of text array
         }
         // return <VideoList></VideoList>;
 

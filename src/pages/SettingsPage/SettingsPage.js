@@ -23,9 +23,8 @@ function SettingsPage() {
     }
 
     function changeMode(e) {
-        // e.preventDefault();
         let newMode = e.target.value
-        window.localStorage.setItem('mode', newMode); // todo redux middlwere every time mode changes?
+        window.localStorage.setItem('mode', newMode);
         window.location.reload();
     }
 

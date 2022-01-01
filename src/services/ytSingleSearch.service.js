@@ -60,7 +60,7 @@ const ytSingleSearch = (term, pt) => {
         }
         else {
             count = 0;
-        } // TODO move reset to form click, if 'load-more' option added;
+        }
         openLoader(false);
     }).catch(function (error) {
         if (error.response.status === 400) {
@@ -97,6 +97,6 @@ async function startYtsr(term) {
         .then(function () {
             // always executed
         });
-} // todo try to pass to node side;
+}
 
 export default ytSingleSearch;

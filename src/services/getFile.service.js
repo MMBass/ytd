@@ -25,8 +25,6 @@ const getFile = (format) => {
     //         }
     // })
     // .then(function () {
-    //     //TODO create service for ls's with arrays. that checks if exist, 
-    //     // if not creates new 'down_history', and pushing to array.
     //     openLoader(false);
     // })
     // .catch(function (error) {

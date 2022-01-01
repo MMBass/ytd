@@ -13,7 +13,7 @@ function Header() {
   const mode = useSelector(state => state.settings.mode);
 
   function selectChange(str) {
-    window.localStorage.setItem('mode',str); // todo redux middlwere every mode change?
+    window.localStorage.setItem('mode',str);
     window.location.reload();
   }
 

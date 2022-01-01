@@ -40,6 +40,12 @@ function App() {
       <div className={mode}>
         <Header></Header>
         <Layout>
+          {mode === 'video' && 
+               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>This mode doesnt work properly, the video may downloaded without audio, or low quality.</div>
+          }
+           {mode === 'playlist' && 
+               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>Playlist mode not finished yet.</div>
+          }
           <Routes>
             <Route exact path="yt-downloader-site/" element={<HomePage />} />
             <Route exact path="yt-downloader-site/history" element={<HistoryPage />} />
