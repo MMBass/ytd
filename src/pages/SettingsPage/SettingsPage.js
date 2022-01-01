@@ -17,6 +17,8 @@ function SettingsPage() {
         }
         if(newFormat === 'choose'){
            window.localStorage.removeItem('globalFormat');
+        }else{
+            window.localStorage.removeItem('globalFormat');
         }// todo rest of formats 
     }
 
@@ -35,7 +37,7 @@ function SettingsPage() {
                     <div className="settings-item"  onChange={changeGlobalFormat}>
                         <p>Global Quality</p>
                         <div>
-                            <input type="radio" name="globalFormat" value='audio' disabled={mode === 'music'} checked={mode === 'music'} />
+                            <input type="radio" name="globalFormat" value='audio' disabled={mode === 'music'}/>
                             <label htmlFor="audio">Audio - mp3</label>
                         </div>
                         <div>
@@ -52,7 +54,7 @@ function SettingsPage() {
                         </div>
                         <div>
                             <input type="radio" name="globalFormat" value='choose' disabled={mode === 'music'} />
-                            <label htmlFor="choose">Choose each one</label>
+                            <label htmlFor="choose">Choose-every-time</label>
                         </div>
                     </div>
 
