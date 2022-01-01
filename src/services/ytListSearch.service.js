@@ -6,11 +6,14 @@ import serverAxios from "@apis/serverAxios";
 import { store } from "@store/store.js";
 import playlistListActionCreators from "@store/creators/playlistList.creator.js";
 import openLoaderActionCreators from "@store/creators/loaderLine.creator.js";
+import playerActionCreators from "@store/creators/player.creator.js";
 
 let count = 0;
 
 const { resetList, setList } = bindActionCreators(playlistListActionCreators, store.dispatch);
 const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
+const { openPlayer } = bindActionCreators(playerActionCreators, store.dispatch);
+
 const state = store.getState();
 const mode = state.settings.mode;
 
@@ -19,6 +22,7 @@ const ytSingleSearch = (term, pt) => {
     const API_KEY = window.localStorage.getItem("API_KEY");
 
     openLoader(true);
+    openPlayer(false);
 
     if (count === 0) {
         resetList(true);
@@ -64,7 +68,7 @@ const ytSingleSearch = (term, pt) => {
             if (error.response.status === 400) {
                 window.localStorage.removeItem("API_KEY");
             }
-            // startYtsr(term); // backup method 2
+            startYtsr(term); // backup method 2
             // openLoader(false);
         })
         .then(function () {
@@ -72,28 +76,28 @@ const ytSingleSearch = (term, pt) => {
         });
 };
 
-// async function startYtsr(term) {
-//     openLoader(true);
-//     serverAxios.get('ytsr', {
-//         headers:{
-//             'x-access-token': window.localStorage.getItem("ACCESS_TOKEN"),
-//         },
-//         params: {
-//             term: term,
-//             type: mode,
-//         }
-//     })
-//         .then(function (response) {
-//             setList(response.data);
-//             openLoader(false);
-//         })
-//         .catch(function (error) {
-//             console.log(error);
-//             openLoader(false);
-//         })
-//         .then(function () {
-//             // always executed
-//         });
-// }
+async function startYtsr(term) {
+    openLoader(true);
+    serverAxios.get('ytsr', {
+        headers:{
+            'x-access-token': window.localStorage.getItem("ACCESS_TOKEN"),
+        },
+        params: {
+            term: term,
+            type: mode,
+        }
+    })
+        .then(function (response) {
+            setList(response.data);
+            openLoader(false);
+        })
+        .catch(function (error) {
+            console.log(error);
+            openLoader(false);
+        })
+        .then(function () {
+            // always executed
+        });
+}
 
 export default ytSingleSearch;

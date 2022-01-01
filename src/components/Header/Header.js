@@ -14,7 +14,7 @@ function Header() {
 
   function selectChange(str) {
     if (str === 'music')  window.localStorage.setItem('globalFormat','audio');
-    window.localStorage.setItem('mode',str); // todo redux middlwere every time mode change?
+    window.localStorage.setItem('mode',str); // todo redux middlwere every mode change?
     window.location.reload();
   }
 
