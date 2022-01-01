@@ -11,7 +11,7 @@ import getFile from "services/getFile.service";
 
 import selectedAction from "@store/creators/selected.creator.js";
 
-function DownBtn(props) {
+function DownBtn() {
     const dispatch = useDispatch();
     const { setSelected } = bindActionCreators(selectedAction, dispatch);
     const settings = useSelector((state) => state.settings);
@@ -20,7 +20,9 @@ function DownBtn(props) {
     function handleSubmit() {
         setSelected(video);
 
-        if (settings.globalFormat) {
+        if (settings.mode === 'music') {
+            getFile('audio');
+        }else if (settings.globalFormat) {
             getFile(settings.globalFormat);
         }else{
             getFormats(video);

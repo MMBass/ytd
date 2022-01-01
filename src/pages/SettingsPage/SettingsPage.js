@@ -10,13 +10,19 @@ function SettingsPage() {
     const mode = useSelector(state => state.settings.mode);
 
     function changeGlobalFormat(e) {
-        // todo settings 
+        let newFormat = e.target.value;
+        
+        if(newFormat === 'audio'){
+            window.localStorage.setItem('globalFormat','audio');
+        }
+        if(newFormat === 'choose'){
+           window.localStorage.removeItem('globalFormat');
+        }// todo rest of formats 
     }
 
     function changeMode(e) {
         // e.preventDefault();
         let newMode = e.target.value
-        if (newMode === 'music')  window.localStorage.setItem('globalFormat','audio');
         window.localStorage.setItem('mode', newMode); // todo redux middlwere every time mode changes?
         window.location.reload();
     }
@@ -43,6 +49,10 @@ function SettingsPage() {
                         <div>
                             <input type="radio" name="globalFormat" value='higher' disabled={mode === 'music'} />
                             <label htmlFor="higher">Higher (video)</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="globalFormat" value='choose' disabled={mode === 'music'} />
+                            <label htmlFor="choose">Choose each one</label>
                         </div>
                     </div>
 
