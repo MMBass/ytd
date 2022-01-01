@@ -12,6 +12,7 @@ function Select(props) {
         <p>{props.title}</p>
       }
       <select className="select" onChange={handleChange}>
+        <option value={props.first}>{props.first}</option>
         {props.options.map((op) => {
           return <option value={op}>{op}</option>
         })}

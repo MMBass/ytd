@@ -1,6 +1,6 @@
 const initState = {
-    mode: "video",
-    globalFormat: "", // audio //(TODO save the code quality, not the format)
+    mode:  window.localStorage.getItem('mode') || "music" ,
+    globalFormat: window.localStorage.getItem('globalFormat') || "audio", //(TODO save the code quality, not the format)
 }
 
 const reducer = (state = initState, action )=>{

@@ -14,7 +14,7 @@ const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispat
 const state = store.getState();
 const mode = state.settings.mode;
 
-const ytApiSearch = (term, pt) => {
+const ytSingleSearch = (term, pt) => {
 
     const API_KEY = window.localStorage.getItem("API_KEY");
 
@@ -33,7 +33,7 @@ const ytApiSearch = (term, pt) => {
             part: 'snippet',
             type: mode,
             pageToken: pt,
-            // videoCategoryId: 10, // Music category, results as video
+            videoCategoryId: mode === 'music' ? 10 : null, // Music category, results as video
         }
     })
         .then(function (response) {
@@ -53,7 +53,7 @@ const ytApiSearch = (term, pt) => {
 
             if (count < 5) {
                 count++;
-                ytApiSearch(term, response.data.nextPageToken);
+                ytSingleSearch(term, response.data.nextPageToken);
             }
             else {
                 count = 0;
@@ -96,4 +96,4 @@ async function startYtsr(term) {
         });
 } // todo try to pass to node side;
 
-export default ytApiSearch;
+export default ytSingleSearch;

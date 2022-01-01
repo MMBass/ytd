@@ -3,7 +3,7 @@ import "./SearchBar.scss";
 
 import { useState } from "react";
 
-import ytApiSearch from "services/ytApiSearch.service";
+import ytSingleSearch from "services/ytSingleSearch.service";
 import { FaSearch } from 'react-icons/fa';
 import { AiOutlineSend } from 'react-icons/ai';
 import Button from '../Button/Button';
@@ -29,8 +29,9 @@ function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    ytApiSearch(term);
+    if(term.length > 1){
+      ytSingleSearch(term);
+    }
   };
 
   const lsSubmit = () => {

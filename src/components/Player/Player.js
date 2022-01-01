@@ -23,7 +23,6 @@ function Player() {
         // Change the style without re-render
         playerElement.current.style.position =  "fixed";
         playerElement.current.style.top =  "0";
-        playerElement.current.style.width =  "99%";
       } else {
         playerElement.current.style = '';
       }

@@ -6,6 +6,10 @@
     margin: 20px;
     padding-bottom: 10px;
 
+    div{
+        display: inline;
+    }
+
     p{
         font-size: 14px;
         font-weight: 600;
@@ -13,11 +17,32 @@
     }
 
     label{
-        font-size: 12px;
+        font-size: 14px;
         margin: 10px 20px 0 10px;
     }
 
     input{
         margin: 10px 0 10px 0;
+    }
+
+    button{
+        font-size: 12px;
+        padding: 10px;
+        float: right;
+    }
+
+    @media (max-width: $break-mobile){
+        div{
+            display: block;
+        }
+
+        button{
+            float: unset;
+            margin-left: 85%;
+        }
+
+        label{
+            font-size: 12px;
+        }
     }
 }
