@@ -13,7 +13,6 @@ function Header() {
   const mode = useSelector(state => state.settings.mode);
 
   function selectChange(str) {
-    if (str === 'music')  window.localStorage.setItem('globalFormat','audio');
     window.localStorage.setItem('mode',str); // todo redux middlwere every mode change?
     window.location.reload();
   }
