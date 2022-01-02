@@ -10,6 +10,12 @@
         display: inline;
     }
 
+    .settings-line{
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
     p{
         font-size: 14px;
         font-weight: 600;
@@ -18,7 +24,7 @@
 
     label{
         font-size: 14px;
-        margin: 10px 20px 0 10px;
+        margin: 0 20px 3px 5px;
     }
 
     input{
