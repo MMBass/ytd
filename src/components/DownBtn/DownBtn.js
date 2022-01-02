@@ -19,7 +19,6 @@ function DownBtn() {
 
     function handleSubmit() {
         setSelected(video);
-
         if (settings.mode === 'music') {
             getFile('audio');
         }else if (settings.globalFormat) {

@@ -15,14 +15,17 @@ function VidDetails(props) {
 
   function handleSubmit(e) {
     e.stopPropagation();
-    setSelected(props);
 
-    if (settings.globalFormat) {
-      getFile(settings.globalFormat);
-    } else {
-      getFormats(props);
+    setSelected(props);
+  console.log(settings.mode)
+    if (settings.mode === 'music') {
+        getFile('audio');
+    }else if (settings.globalFormat) {
+        getFile(settings.globalFormat);
+    }else{
+        getFormats(props);
     }
-  }
+}
 
   return (
     <div className="vid-details">

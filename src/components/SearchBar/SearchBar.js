@@ -2,8 +2,10 @@ import React from "react";
 import "./SearchBar.scss";
 
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import ytSingleSearch from "services/ytSingleSearch.service";
+import ytListSearch from "services/ytListSearch.service";
 import { FaSearch } from 'react-icons/fa';
 import { AiOutlineSend } from 'react-icons/ai';
 import Button from '../Button/Button';
@@ -12,6 +14,7 @@ import Input from '../Input/Input';
 function SearchBar() {
   const [term, setTerm] = useState("");
   const [key, setKey] = useState("");
+  const mode = useSelector(state => state.settings.mode);
 
   const handleChange = (event) => {
     let str = event.target.value;
@@ -30,7 +33,8 @@ function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(term.length > 1){
-      ytSingleSearch(term);
+      if (mode === 'playlist') ytListSearch(term);
+      else ytSingleSearch(term);
     }
   };
 
