@@ -23,7 +23,11 @@ function VideoItem(props) {
 
         {props.id
           ?
-          <img className="vid-thumb" src={props.thumbnail} alt={props.id}/>
+          <>
+            {props.length && <div className="list-length"><p>{props.length}</p></div>}
+            <img className="vid-thumb" src={props.thumbnail} alt={props.id}/>
+          </>
+     
           :
           // eslint-disable-next-line jsx-a11y/alt-text
           <img className="vid-thumb" src="" alt={null} />
