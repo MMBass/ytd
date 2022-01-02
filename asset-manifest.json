@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/yt-downloader-site/static/css/main.2bb53d04.chunk.css",
-    "main.js": "/yt-downloader-site/static/js/main.433163f1.chunk.js",
-    "main.js.map": "/yt-downloader-site/static/js/main.433163f1.chunk.js.map",
+    "main.css": "/yt-downloader-site/static/css/main.e5ad60a2.chunk.css",
+    "main.js": "/yt-downloader-site/static/js/main.0876962f.chunk.js",
+    "main.js.map": "/yt-downloader-site/static/js/main.0876962f.chunk.js.map",
     "runtime-main.js": "/yt-downloader-site/static/js/runtime-main.31a5d56b.js",
     "runtime-main.js.map": "/yt-downloader-site/static/js/runtime-main.31a5d56b.js.map",
     "static/js/2.f030428e.chunk.js": "/yt-downloader-site/static/js/2.f030428e.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.8e900d8e.chunk.js": "/yt-downloader-site/static/js/3.8e900d8e.chunk.js",
     "static/js/3.8e900d8e.chunk.js.map": "/yt-downloader-site/static/js/3.8e900d8e.chunk.js.map",
     "index.html": "/yt-downloader-site/index.html",
-    "static/css/main.2bb53d04.chunk.css.map": "/yt-downloader-site/static/css/main.2bb53d04.chunk.css.map",
+    "static/css/main.e5ad60a2.chunk.css.map": "/yt-downloader-site/static/css/main.e5ad60a2.chunk.css.map",
     "static/js/2.f030428e.chunk.js.LICENSE.txt": "/yt-downloader-site/static/js/2.f030428e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.31a5d56b.js",
     "static/js/2.f030428e.chunk.js",
-    "static/css/main.2bb53d04.chunk.css",
-    "static/js/main.433163f1.chunk.js"
+    "static/css/main.e5ad60a2.chunk.css",
+    "static/js/main.0876962f.chunk.js"
   ]
 }
