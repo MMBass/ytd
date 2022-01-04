@@ -14,7 +14,7 @@ const { openPlayer } = bindActionCreators(playerActionCreators, store.dispatch);
 const state = store.getState();
 const mode = state.settings.mode;
 
-const ytSingleSearch = (term) => {
+const ytListSearch = (term) => {
 
     openLoader(true);
     openPlayer(false);
@@ -42,4 +42,4 @@ const ytSingleSearch = (term) => {
     });
 };
 
-export default ytSingleSearch;
+export default ytListSearch;

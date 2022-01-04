@@ -1,3 +1,4 @@
+import https from 'https';
 import axios from 'axios';
 
 export default axios.create({
@@ -7,4 +8,5 @@ export default axios.create({
   headers: {
     'x-access-token': window.localStorage.getItem("ACCESS_TOKEN"),
   },
+  httpsAgent: new https.Agent({ keepAlive: true }),
 });

@@ -17,7 +17,7 @@ function VidDetails(props) {
     e.stopPropagation();
 
     setSelected(props);
-  console.log(settings.mode)
+    
     if (settings.mode === 'music') {
         getFile('audio');
     }else if (settings.globalFormat) {

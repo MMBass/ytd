@@ -21,7 +21,7 @@ function Header() {
     <div id="HEADER">
       <LoaderLine></LoaderLine>
       <Flex>
-        <NavLink className="h1-link" to="yt-downloader-site/"><h1>YT DOWNLOADER</h1></NavLink>
+        <NavLink className="h1-link" to="ytd/"><h1>YT DOWNLOADER</h1></NavLink>
         <Navbar></Navbar>
         <Select title="Mode" first={mode} options={["music", "playlist", "video"].filter((w)=>{return w !== mode})} handleChange={selectChange}></Select>
       </Flex>

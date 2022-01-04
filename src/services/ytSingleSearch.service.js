@@ -18,12 +18,11 @@ const state = store.getState();
 const mode = state.settings.mode;
 
 const ytSingleSearch = (term, pt) => {
-    startYtsr(term);
     const API_KEY = window.localStorage.getItem("API_KEY");
 
     openLoader(true);
     openPlayer(false);
-
+ 
     ytapiAxios.get('search', {
         params: {
             q: term,
@@ -32,7 +31,7 @@ const ytSingleSearch = (term, pt) => {
             part: 'snippet',
             type: 'video',
             pageToken: pt,
-            videoCategoryId: mode === 'music' ? 10 : 0, // Music category, results as video
+            ...( mode === 'music' ? { videoCategoryId: 10 } : null),// Music category, results as video
         }
     }).then(function (response) {
         const items = [];
@@ -54,7 +53,7 @@ const ytSingleSearch = (term, pt) => {
 
         setList(items);
 
-        if (count < 5) {
+        if (count < 2) {
             count++;
             ytSingleSearch(term, response.data.nextPageToken);
         }
@@ -63,7 +62,7 @@ const ytSingleSearch = (term, pt) => {
         }
         openLoader(false);
     }).catch(function (error) {
-        if (error.response.status === 400) {
+        if (error.response.status == 400) {
             window.localStorage.removeItem("API_KEY");
         }
         startYtsr(term); // backup method 2

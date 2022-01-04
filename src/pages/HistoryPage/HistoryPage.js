@@ -37,7 +37,7 @@ function HistoryPage() {
 
     return (
         <>
-            <NavLink className="back-arrow" to="../yt-downloader-site/"><MdOutlineArrowBack></MdOutlineArrowBack></NavLink>
+            <NavLink className="back-arrow" to="../ytd/"><MdOutlineArrowBack></MdOutlineArrowBack></NavLink>
             <InnerNav items={sections} navClick={handleSetActive} active={active}></InnerNav>
             <InnerFrame id="HISTORY_PAGE">
                 {/* // just a videoList component, dynamic content, with no player option, use the ls for start content  */}

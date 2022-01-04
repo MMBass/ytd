@@ -30,7 +30,7 @@ function SettingsPage() {
 
     return (
         <>
-            <NavLink to="../yt-downloader-site/" className="back-arrow"><MdOutlineArrowBack></MdOutlineArrowBack></NavLink>
+            <NavLink to="../ytd/" className="back-arrow"><MdOutlineArrowBack></MdOutlineArrowBack></NavLink>
             <InnerFrame id="SETTINGS_PAGE">
                 <div className="settings-content">
                     <div className="settings-item" onChange={changeGlobalFormat}>

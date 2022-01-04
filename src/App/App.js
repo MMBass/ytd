@@ -47,10 +47,10 @@ function App() {
                <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>Playlist mode not finished yet.</div>
           }
           <Routes>
-            <Route exact path="yt-downloader-site/" element={<HomePage />} />
-            <Route exact path="yt-downloader-site/history" element={<HistoryPage />} />
-            <Route exact path="yt-downloader-site/settings" element={<SettingsPage />} />
-            <Route path="yt-downloader-site/*" element={<NoMatchPage />} />
+            <Route exact path="ytd/" element={<HomePage />} />
+            <Route exact path="ytd/history" element={<HistoryPage />} />
+            <Route exact path="ytd/settings" element={<SettingsPage />} />
+            <Route path="ytd/*" element={<NoMatchPage />} />
           </Routes>
         </Layout>
       </div>
