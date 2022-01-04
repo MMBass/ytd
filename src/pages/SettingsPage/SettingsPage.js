@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import "./SettingsPage.scss";
 
 import { useSelector } from "react-redux";
@@ -9,6 +10,12 @@ import { NavLink } from "react-router-dom";
 function SettingsPage() {
     const mode = useSelector(state => state.settings.mode);
     const globalFormat = useSelector(state => state.settings.globalFormat);
+
+
+    useEffect(() => {
+        // setList();
+        window.history.pushState({}, undefined, "/ytd");
+    }, []);
 
     function changeGlobalFormat(e) {
         let newFormat = e.target.value;

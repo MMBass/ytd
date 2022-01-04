@@ -20,6 +20,7 @@ function HistoryPage() {
 
     useEffect(() => {
         // setList();
+        window.history.pushState({}, undefined, "/ytd");
     },[]);
 
     const handleSetActive = (i) => {

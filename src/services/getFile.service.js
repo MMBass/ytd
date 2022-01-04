@@ -12,7 +12,8 @@ const getFile = (format) => {
 
     openLoader(true);
 
-    window.location.href = `https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`;
+    window.location.assign(`https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`);
+    
     // window.location.href = `http://localhost:5000/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`;
     // fetch(`http://localhost:5000/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`)
     // .then(response => response.json())
