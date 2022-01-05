@@ -16,7 +16,7 @@ const getFile = (format) => {
         // window.location.href = `http://localhost:5000/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`;
     // }
        
-    fetch(`https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`)
+    window.location.href =  `https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`;
     // .then(response => response.json())
     // .then(data => console.log(data));
 
