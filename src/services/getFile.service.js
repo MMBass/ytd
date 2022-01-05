@@ -12,10 +12,11 @@ const getFile = (format) => {
 
     openLoader(true);
 
-    window.location.assign(`https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`);
-    
-    // window.location.href = `http://localhost:5000/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`;
-    // fetch(`http://localhost:5000/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`)
+    // if(state.settings.mode !== 'music'){
+        // window.location.href = `http://localhost:5000/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`;
+    // }
+       
+    fetch(`https://bass-ytd.herokuapp.com/download?v_id=${state.selected.id}&format=${format}&accessToken=${accessToken}`)
     // .then(response => response.json())
     // .then(data => console.log(data));
 
@@ -23,13 +24,15 @@ const getFile = (format) => {
 
     // serverAxios.get('download',{
     //         params:{
+    //             type: 'list',
     //             v_id: state.selected.id,
-    //             format: format,
-    //             key: API_KEY,
+    //             format: 'audio',
+    //             accessToken: accessToken,
     //         }
     // })
     // .then(function () {
     //     openLoader(false);
+    //     // getFile('audio');
     // })
     // .catch(function (error) {
     //     console.log(error);
