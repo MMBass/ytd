@@ -77,7 +77,7 @@ async function startYtsr(term) {
     
     serverAxios.get('ytsr', {
         headers: {
-            'x-access-token': window.localStorage.getItem("ACCESS_TOKEN"),
+            'x-access-token': window.sessionStorage.getItem("ACCESS_TOKEN"),
         },
         params: {
             term: term,

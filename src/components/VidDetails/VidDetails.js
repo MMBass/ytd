@@ -6,6 +6,7 @@ import "./VidDetails.scss";
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import getFormats from "services/getFormats.service";
 import getFile from "services/getFile.service";
+import getListFiles from "@services/getListFiles.service";
 import selectedAction from "@store/creators/selected.creator.js";
 
 function VidDetails(props) {
@@ -18,7 +19,9 @@ function VidDetails(props) {
 
     setSelected(props);
     
-    if (settings.mode === 'music') {
+    if(settings.mode === 'playlist'){
+      getListFiles(props.id);
+    }else if (settings.mode === 'music') {
         getFile('audio');
     }else if (settings.globalFormat) {
         getFile(settings.globalFormat);

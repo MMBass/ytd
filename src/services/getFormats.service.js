@@ -16,7 +16,7 @@ const getFormats = (video) => {
 
     serverAxios.get('info',{
             headers:{
-                'x-access-token': window.localStorage.getItem("ACCESS_TOKEN"),
+                'x-access-token': window.sessionStorage.getItem("ACCESS_TOKEN"),
             },
             params:{
                 v_id: video.id,

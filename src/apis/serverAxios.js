@@ -6,7 +6,7 @@ export default axios.create({
   baseURL: 'https://bass-ytd.herokuapp.com/',
   timeout: 25000,
   headers: {
-    'x-access-token': window.localStorage.getItem("ACCESS_TOKEN"),
+    'x-access-token': window.sessionStorage.getItem("ACCESS_TOKEN"),
   },
   httpsAgent: new https.Agent({ keepAlive: true }),
 });
