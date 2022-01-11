@@ -4,9 +4,10 @@ import { bindActionCreators } from "redux";
 import ytapiAxios from "@apis/ytapiAxios";
 import { store } from "@store/store.js";
 import openLoaderActionCreators from "@store/creators/loaderLine.creator.js";
+import progressListActionCreators from "@store/creators/progressList.creator.js";
 
 const { openLoader } = bindActionCreators(openLoaderActionCreators, store.dispatch);
-// const { openProgress } = bindActionCreators(openLoaderActionCreators, store.dispatch);
+const progressList = bindActionCreators(progressListActionCreators, store.dispatch);
 
 // const ENDPOINT = 'http://localhost:5000/download';
 const ENDPOINT = 'https://bass-ytd.herokuapp.com/download';
@@ -25,12 +26,14 @@ const getListFiles = async (list_id) => {
             }
         }).then(function (response) {
             const items = [];
+            
             response.data.items.forEach((item, index) => {
                 items[index] = {
                     id: item.snippet.resourceId.videoId,
-                    title: item.snippet.title,
+                    title: item.snippet.title.substr(0, 31),
                 }
             });
+            progressList.setProgressList(items.length);
 
             startSocket('audio', items);
           
@@ -53,16 +56,19 @@ function startSocket(format, items){
     let popUp;
 
     socket.on("listContinue", () => {
+        progressList.updateProgressList(true);
         if (popUp){
             popUp.close();
             popUp = undefined;
         }
-        items.shift();
-        console.log(items[0]);
-        popUp = window.open(ENDPOINT + `?type=list&v_id=${items[0].id}&format=${format}&accessToken=${accessToken}&index=${items.length == 1 && 'last'}`, '_blank');
+        setTimeout(() => {
+            popUp = window.open(ENDPOINT + `?type=list&v_id=${items[0].id}&format=${format}&accessToken=${accessToken}&index=${items.length == 1 && 'last'}&title=${items[0].title}`, '_blank');
+            items.shift();
+        }, 1500);
     });
 
     socket.on("listFinish", data => {
+        progressList.resetProgressList(true);
         endConnection();
     });
 

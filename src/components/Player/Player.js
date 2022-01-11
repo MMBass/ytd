@@ -32,17 +32,17 @@ function Player() {
   }
 
   const Frame = () => {
-    if (mode === 'playlist') {
-      return <iframe 
-      id="list-iframe"
-      src={`https://www.youtube.com/embed/videoseries?list=${video.id}`}
-      title={video.title || 'playlist'}
-      frameborder="0" 
-      allowFullScreen={true}
-      ref={listFrame}
-      ></iframe>
-    }
     if (video.id) {
+      if (mode === 'playlist') {
+        return <iframe 
+        id="list-iframe"
+        src={`https://www.youtube.com/embed/videoseries?list=${video.id}`}
+        title={video.title || 'playlist'}
+        frameborder="0" 
+        allowFullScreen={true}
+        ref={listFrame}
+        ></iframe>
+      }
       return <iframe
                 src={`https://www.youtube.com/embed/${video.id}`}
                 title={video.title || 'video'}

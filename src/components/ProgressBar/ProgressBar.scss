@@ -1,0 +1,22 @@
+@import "../../theme.scss";
+
+.progress-conainer {
+    margin: auto;
+    display:block;
+    position:relative;
+    width:600px;
+    max-width: 90%;
+    min-height:330px;
+    max-height:80vh;
+    background-color:rgba(255, 255, 255, 0.39);
+    text-align: center;
+    padding-top: 100px;
+    color: rgba(70, 70, 70, 0.945);
+
+    .progress-bar{
+        margin-top: 20px;
+        width: 250px;
+        height: 20px;
+        color: rgba(110, 168, 255, 0.651);
+    }
+  }
