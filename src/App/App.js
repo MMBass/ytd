@@ -44,7 +44,7 @@ function App() {
                <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>This mode doesnt work properly, the video may downloaded without audio, or low quality.</div>
           }
            {mode === 'playlist' && 
-               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}> The items will downloaded audio only </div>
+               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>  Items will download audio only </div>
           }
           <Routes>
             <Route exact path="ytd/" element={<HomePage />} />
