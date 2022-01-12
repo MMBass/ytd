@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import serverAxios from "@apis/serverAxios";
 
-import io from "socket.io-client";
-
 import './App.scss';
 import Header from '@components/Header/Header';
 import Layout from '@components/Layout/Layout';
@@ -45,9 +43,9 @@ function App() {
           {mode === 'video' && 
                <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>This mode doesnt work properly, the video may downloaded without audio, or low quality.</div>
           }
-           {/* {mode === 'playlist' && 
-               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}> </div>
-          } */}
+           {mode === 'playlist' && 
+               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}> The items will downloaded audio only </div>
+          }
           <Routes>
             <Route exact path="ytd/" element={<HomePage />} />
             <Route exact path="ytd/history" element={<HistoryPage />} />
