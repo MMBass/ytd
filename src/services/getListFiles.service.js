@@ -26,7 +26,7 @@ const getListFiles = async (list_id) => {
             }
         }).then(function (response) {
             const items = [];
-            
+            console.log(response.data)
             response.data.items.forEach((item, index) => {
                 items[index] = {
                     id: item.snippet.resourceId.videoId,

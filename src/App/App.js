@@ -45,9 +45,9 @@ function App() {
           {mode === 'video' && 
                <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>This mode doesnt work properly, the video may downloaded without audio, or low quality.</div>
           }
-           {mode === 'playlist' && 
-               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}>Playlist mode not finished yet.</div>
-          }
+           {/* {mode === 'playlist' && 
+               <div style={{background: 'pink', border: '1px solid red', fontSize: '13px', padding: '20px',textAlign: 'center'}}> </div>
+          } */}
           <Routes>
             <Route exact path="ytd/" element={<HomePage />} />
             <Route exact path="ytd/history" element={<HistoryPage />} />

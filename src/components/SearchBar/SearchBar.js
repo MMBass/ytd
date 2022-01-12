@@ -93,7 +93,7 @@ function SearchBar() {
     return (
       <>
         <form className="search-form" onSubmit={handleSubmit}>
-        <Input onChange={handleChange} name='key-input' type="text" placeholder="Search playlist name..." ></Input>
+        <Input onChange={handleChange} name='video-search' type="text" placeholder="Search playlist name..." ></Input>
         <Button type="submit">
           <FaSearch></FaSearch>
         </Button>
