@@ -30,7 +30,6 @@ function SearchBar() {
         break;
       case "list-id":
         setlistIdTerm(extractId(str));
-        console.log(listIdTerm)
         break;
       default:
         return;
@@ -47,7 +46,6 @@ function SearchBar() {
 
   const handleListIdSubmit = (e) => {
     e.preventDefault(listIdTerm);
-    console.log()
     if(listIdTerm.length > 5){
       if (mode === 'playlist') getListFiles(listIdTerm);
     }

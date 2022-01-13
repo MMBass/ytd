@@ -55,6 +55,7 @@ function startSocket(format, items){
     let socket = io('https://bass-ytd.herokuapp.com/');
     let popUp;
 
+
     socket.on("listContinue", () => {
             popUp = window.open(ENDPOINT + `?type=list&v_id=${items[0].id}&format=${format}&accessToken=${accessToken}&index=${items.length == 1 && 'last'}&title=${items[0].title}`, '_blank');
             items.shift();
