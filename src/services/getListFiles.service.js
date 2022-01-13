@@ -56,15 +56,9 @@ function startSocket(format, items){
     let popUp;
 
     socket.on("listContinue", () => {
-        progressList.updateProgressList(true);
-        if (popUp){
-            popUp.close();
-            popUp = undefined;
-        }
-        setTimeout(() => {
             popUp = window.open(ENDPOINT + `?type=list&v_id=${items[0].id}&format=${format}&accessToken=${accessToken}&index=${items.length == 1 && 'last'}&title=${items[0].title}`, '_blank');
             items.shift();
-        }, 1500);
+            progressList.updateProgressList(true);
     });
 
     socket.on("listFinish", data => {

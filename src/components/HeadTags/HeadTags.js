@@ -9,10 +9,10 @@ function HeadTags() {
   useEffect(() => {
     switch (mode) {
       case 'video':
-        setColor('#FFC107');
+        setColor('#4b84ff');
         break;
       case 'playlist':
-        setColor('#4b84ff');
+        setColor('#FFC107');
         break;
       case 'music':
         setColor('#ff4949');

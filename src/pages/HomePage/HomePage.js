@@ -10,6 +10,7 @@ import BlockLayout from "components/BlockLayout/BlockLayout";
 
 function HomePage() {
   const video = useSelector((state) => state.video);
+  const selected = useSelector((state) => state.selected);
   const modal = useSelector((state) => state.openModal);
   const progressList = useSelector((state) => state.progressList);
   
@@ -18,8 +19,8 @@ function HomePage() {
             <SearchBar></SearchBar>
             <DisplayLayout></DisplayLayout>
             {video.id && <DownBtn></DownBtn>}
-            {modal && <Modal title={video.title}></Modal>}
-            {progressList && <BlockLayout><ProgressBar title={video.title}></ProgressBar></BlockLayout>}
+            {modal && <Modal title={selected.title}></Modal>}
+            {progressList && <BlockLayout><ProgressBar></ProgressBar></BlockLayout>}
           </div>
         );
 };
