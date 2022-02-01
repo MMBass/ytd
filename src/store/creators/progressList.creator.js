@@ -5,10 +5,10 @@ const ProgressList = {
             payload: num,
         };
     },
-    updateProgressList: (bool) =>{
+    updateProgressList: (src) =>{
         return  {
             type: "updateProgressList",
-            payload: bool,
+            payload: src,
         };
     },
     resetProgressList: (bool) =>{

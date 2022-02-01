@@ -13,6 +13,7 @@ const progressList = bindActionCreators(progressListActionCreators, store.dispat
 const ENDPOINT = 'https://bass-ytd.herokuapp.com/download';
 
 const getListFiles = async (list_id) => {
+    openLoader(true);
     window.onbeforeunload = function() { return 'are you sure?'; };
     const API_KEY = window.localStorage.getItem("API_KEY");
     // get the playlist id's from google - then start the socket:
@@ -33,7 +34,6 @@ const getListFiles = async (list_id) => {
                     title: item.snippet.title.substr(0, 31),
                 }
             });
-            progressList.setProgressList(items.length);
 
             startSocket('audio', items);
           
@@ -43,6 +43,7 @@ const getListFiles = async (list_id) => {
             }
         }).then(function () {
             // always executed
+            openLoader(false);
         });
     }catch{
         console.error('get playlist items error');
@@ -50,6 +51,7 @@ const getListFiles = async (list_id) => {
 };
 
 function startSocket(format, items){
+    progressList.setProgressList(items.length);
     const accessToken = window.sessionStorage.getItem("ACCESS_TOKEN");
     // let socket = io('http://localhost:5000/');
     let socket = io('https://bass-ytd.herokuapp.com/');
@@ -57,12 +59,26 @@ function startSocket(format, items){
 
 
     socket.on("listContinue", () => {
-            popUp = window.open(ENDPOINT + `?type=list&v_id=${items[0].id}&format=${format}&accessToken=${accessToken}&index=${items.length == 1 && 'last'}&title=${items[0].title}`, '_blank');
-            items.shift();
-            progressList.updateProgressList(true);
+
+        // open end close a new tab each file. works but not user friendly
+        // popUp = window.open(ENDPOINT + `?type=list&v_id=${items[0].id}&format=${format}&accessToken=${accessToken}&index=${items.length == 1 && 'last'}&title=${items[0].title}`, '_blank');
+ 
+        // disconnect the socket (but js keep running)
+        // window.location.href = ENDPOINT + `?type=list&v_id=${items[0].id}&format=${format}&accessToken=${accessToken}&index=${items.length == 1 && 'last'}&title=${items[0].title}`;
+        
+        if(items.length > 0){
+            
+            let item = items.shift();
+
+            progressList.updateProgressList(ENDPOINT + `?type=list&v_id=${item.id}&format=${format}&accessToken=${accessToken}&index=${items.length === 0 && 'last'}&title=${item.title}`);
+
+            // document.body.innerHTML += `<iframe class="down-frame" src="${ENDPOINT + `?type=list&v_id=${item.id}&format=${format}&accessToken=${accessToken}&index=${items.length === 0 && 'last'}&title=${item.title}`}" title="down" style="max-width:0;max-height:0;"></iframe>`;
+  
+        }
     });
 
     socket.on("listFinish", data => {
+        console.log("finish")
         progressList.resetProgressList(true);
         endConnection();
     });
@@ -78,9 +94,10 @@ function startSocket(format, items){
             popUp = undefined;
         }
         openLoader(false);
-        window.onbeforeunload = function() { return; };;
+        window.onbeforeunload = function() { return; };
         socket.disconnect();
         socket = undefined;
+        // document.querySelectorAll(".down-frame").forEach((elem) => elem.remove());
     }
     
 }
