@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import serverAxios from "@apis/serverAxios";
+import {startHistory} from "@services/history.service";
 
 import './App.scss';
 import Header from '@components/Header/Header';
@@ -17,6 +18,7 @@ function App() {
   const mode = useSelector(state => state.settings.mode);
 
   function init() {
+    startHistory();
     serverAxios.get('/',{ headers:{ 'x-api-key':  window.localStorage.getItem('API_KEY')}}).then((response) => {
       if (response.status === 200 && response.headers["access-token"]) {
          window.sessionStorage.setItem('ACCESS_TOKEN',response.headers["access-token"]);

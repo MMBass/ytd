@@ -5,7 +5,7 @@ import "./VideoList.scss"
 import VideoItem from "../VideoItem/VideoItem";
 import Flex from "@components/Flex/Flex";
 
-function VideoList() {
+function VideoList(props) {
 
   let list = useSelector((state) => state.vidList);
 
@@ -13,7 +13,7 @@ function VideoList() {
     <div className="vid-list">
       <Flex>
         {list.map((i) =>
-          <>{<VideoItem {...i} key={new Date() || i.id}></VideoItem>}</>
+          <>{<VideoItem {...i} key={new Date() || i.id} history={props.history}></VideoItem>}</>
         )}
       </Flex>
     </div>

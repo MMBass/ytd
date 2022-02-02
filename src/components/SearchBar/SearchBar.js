@@ -3,6 +3,7 @@ import "./SearchBar.scss";
 
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { saveHistory } from "@services/history.service";
 
 import ytSingleSearch from "services/ytSingleSearch.service";
 import ytListSearch from "services/ytListSearch.service";
@@ -41,11 +42,12 @@ function SearchBar() {
     if(term.length > 1){
       if (mode === 'playlist') ytListSearch(term);
       else ytSingleSearch(term);
+      saveHistory("SEARCH_HISTORY",term);
     }
   };
 
   const handleListIdSubmit = (e) => {
-    e.preventDefault(listIdTerm);
+    e.preventDefault();
     if(listIdTerm.length > 5){
       if (mode === 'playlist') getListFiles(listIdTerm);
     }

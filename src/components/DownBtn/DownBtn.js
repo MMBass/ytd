@@ -9,6 +9,7 @@ import { AiOutlineArrowDown } from 'react-icons/ai';
 import getFormats from "services/getFormats.service";
 import getFile from "services/getFile.service";
 import getListFiles from "@services/getListFiles.service";
+import { saveHistory } from "@services/history.service";
 
 import selectedAction from "@store/creators/selected.creator.js";
 
@@ -22,10 +23,13 @@ function DownBtn() {
         setSelected(video);
 
         if(settings.mode === 'playlist'){
+            saveHistory("DOWN_HISTORY",{...video, id: Date.now()});
             getListFiles(video.id);
         }else if (settings.mode === 'music') {
+            saveHistory("DOWN_HISTORY",{...video, id: Date.now()});
             getFile('audio');
         }else if (settings.globalFormat) {
+            saveHistory("DOWN_HISTORY",{...video, id: Date.now()});
             getFile(settings.globalFormat);
         }else{
             getFormats(video);

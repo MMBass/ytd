@@ -1,12 +1,13 @@
-import React from "react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
+import { removeFromHistory } from "@services/history.service";
 
 import "./VidDetails.scss";
-import { AiOutlineArrowDown } from 'react-icons/ai';
+import { AiOutlineArrowDown, AiTwotoneDelete } from 'react-icons/ai';
 import getFormats from "services/getFormats.service";
 import getFile from "services/getFile.service";
 import getListFiles from "@services/getListFiles.service";
+import { saveHistory } from "@services/history.service";
 import selectedAction from "@store/creators/selected.creator.js";
 
 function VidDetails(props) {
@@ -16,17 +17,25 @@ function VidDetails(props) {
 
   function handleSubmit(e) {
     e.stopPropagation();
-
-    setSelected(props);
     
-    if(settings.mode === 'playlist'){
-      getListFiles(props.id);
-    }else if (settings.mode === 'music') {
-        getFile('audio');
-    }else if (settings.globalFormat) {
-        getFile(settings.globalFormat);
+    if(props.history){
+      removeFromHistory(props.history, props.id);
+      props.setDeleted(true);
     }else{
-        getFormats(props);
+      setSelected(props);
+    
+      if(settings.mode === 'playlist'){
+        saveHistory("DOWN_HISTORY",{...props, id: Date.now()});
+        getListFiles(props.id);
+      }else if (settings.mode === 'music') {
+        saveHistory("DOWN_HISTORY",{...props, id: Date.now()});
+        getFile('audio');
+      }else if (settings.globalFormat) {
+        saveHistory("DOWN_HISTORY",{...props, id: Date.now()});
+        getFile(settings.globalFormat);
+      }else{
+          getFormats(props);
+      }
     }
 }
 
@@ -34,7 +43,13 @@ function VidDetails(props) {
     <div className="vid-details">
       <p className="vid-title">{props.title}</p>
       <i className="vid-source">{props.channelName}</i>
-      <small className="vid-footer" onClick={(e) => handleSubmit(e, props)}> <AiOutlineArrowDown></AiOutlineArrowDown></small>
+      <small className="vid-footer" onClick={(e) => handleSubmit(e, props)}> 
+       {props.history ?
+          <AiTwotoneDelete></AiTwotoneDelete>
+          :
+          <AiOutlineArrowDown></AiOutlineArrowDown>
+      }
+      </small>
     </div>
   );
 };

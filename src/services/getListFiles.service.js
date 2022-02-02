@@ -71,14 +71,10 @@ function startSocket(format, items){
             let item = items.shift();
 
             progressList.updateProgressList(ENDPOINT + `?type=list&v_id=${item.id}&format=${format}&accessToken=${accessToken}&index=${items.length === 0 && 'last'}&title=${item.title}`);
-
-            // document.body.innerHTML += `<iframe class="down-frame" src="${ENDPOINT + `?type=list&v_id=${item.id}&format=${format}&accessToken=${accessToken}&index=${items.length === 0 && 'last'}&title=${item.title}`}" title="down" style="max-width:0;max-height:0;"></iframe>`;
-  
         }
     });
 
     socket.on("listFinish", data => {
-        console.log("finish")
         progressList.resetProgressList(true);
         endConnection();
     });
@@ -97,7 +93,6 @@ function startSocket(format, items){
         window.onbeforeunload = function() { return; };
         socket.disconnect();
         socket = undefined;
-        // document.querySelectorAll(".down-frame").forEach((elem) => elem.remove());
     }
     
 }

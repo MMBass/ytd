@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 
 import { FiSettings } from 'react-icons/fi';
-import { AiOutlineHistory, AiOutlineHome } from 'react-icons/ai';
+import { AiOutlineHistory } from 'react-icons/ai';
 
 function Navbar() {
     return (

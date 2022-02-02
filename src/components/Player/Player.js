@@ -20,15 +20,18 @@ function Player() {
   },[]);
 
   const handleScroll = () => {
-    if (window.innerWidth < 768) {
-      if (window.pageYOffset > playerElement.current.offsetTop) {
-        // Change the style without re-render
-        playerElement.current.style.position = "fixed";
-        playerElement.current.style.top = "0";
-      } else {
-        playerElement.current.style = '';
+    if(playerElement.current){
+      if (window.innerWidth < 768) {
+        if (window.pageYOffset > playerElement.current.offsetTop) {
+          // Change the style without re-render
+          playerElement.current.style.position = "fixed";
+          playerElement.current.style.top = "0";
+        } else {
+          playerElement.current.style = '';
+        }
       }
     }
+   
   }
 
   const Frame = () => {

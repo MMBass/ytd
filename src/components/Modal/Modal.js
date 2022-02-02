@@ -5,10 +5,12 @@ import { bindActionCreators } from "redux";
 
 import openModalActionCreators from "@store/creators/openModal.creator.js";
 import getFile from "services/getFile.service";
+import { saveHistory } from "@services/history.service";
 
 function Modal(props) {
   const [format, setFormat] = useState('');
   const formats = useSelector(state => state.formats);
+  const video = useSelector((state) => state.video);
   const dispatch = useDispatch();
   const { openModal } = bindActionCreators(openModalActionCreators, dispatch);
 
@@ -18,8 +20,9 @@ function Modal(props) {
 
   function handleSubmit() {
     if (format) {
-      getFile(format);
+      saveHistory("DOWN_HISTORY",{...video, id: Date.now()});
       openModal(false);
+      getFile(format);
     }
   }
 
