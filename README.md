@@ -4,4 +4,4 @@
 
 ![Screenshot2](https://github.com/MMBass/ytd/blob/master/IMG-20240106-WA0014.jpg)
 
-## Developed with react and expressJs
+## Developed with React and ExpressJs
