@@ -5,9 +5,9 @@
 ### Three modes - music, playists and videos
 ### For first use enter a youtube api-key, then you can Search for songs or paste direct url, and click the download button on every result you want to download
 
-  <img src="https://basssites.com/images/ytd-mobiles.jpeg" alt="Screenshot1" float="left" width=600 style="max-width: 600px; float: left" />
+  <img src="https://basssites.com/images/ytd-mobiles.jpeg" alt="Screenshot1" width=600/>
 
-  <img src="https://github.com/MMBass/ytd/blob/master/IMG-20240106-WA0014.jpg" alt="Screenshot1" width=300 style="max-width: 300px; " />
+  <img src="https://github.com/MMBass/ytd/blob/master/IMG-20240106-WA0014.jpg" alt="Screenshot1" width=300 />
 
 
 ## Developed with React and ExpressJs
